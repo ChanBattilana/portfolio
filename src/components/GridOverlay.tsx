@@ -38,7 +38,7 @@ export const GridOverlay: React.FC = () => {
                   top: 8,
                   left: 4,
                   fontSize: '9px',
-                  fontFamily: 'Space Mono, monospace',
+                  fontFamily: 'DM Sans, sans-serif',
                   color: 'rgba(255, 255, 255, 0.15)',
                   userSelect: 'none',
                 }}
@@ -64,7 +64,7 @@ export const GridOverlay: React.FC = () => {
           color: showGridLines ? '#00f5d4' : '#8e8e93',
           padding: '6px 12px',
           borderRadius: '8px',
-          fontFamily: 'Space Mono, monospace',
+          fontFamily: 'DM Sans, sans-serif',
           fontSize: '0.72rem',
           cursor: 'pointer',
           backdropFilter: 'blur(8px)',

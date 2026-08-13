@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
           <Terminal size={14} color="#00f5d4" />
           <span
             style={{
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.78rem',
               color: '#00f5d4',
               letterSpacing: '1px',
@@ -52,7 +52,7 @@ export const HeroSection: React.FC = () => {
           <span style={{ color: 'rgba(255,255,255,0.2)' }}>|</span>
           <span
             style={{
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
               color: '#8e8e93',
             }}
@@ -113,7 +113,7 @@ export const HeroSection: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '12px',
-                fontFamily: 'Space Mono, monospace',
+                fontFamily: 'DM Sans, sans-serif',
                 fontSize: '0.78rem',
                 color: '#8e8e93',
               }}
@@ -134,7 +134,7 @@ export const HeroSection: React.FC = () => {
             position: 'absolute',
             bottom: '-3.5rem',
             left: '2rem',
-            fontFamily: 'Space Mono, monospace',
+            fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.72rem',
             color: 'rgba(255, 255, 255, 0.25)',
             display: 'flex',

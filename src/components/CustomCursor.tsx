@@ -12,7 +12,7 @@ export const CustomCursor: React.FC = () => {
   const target = useRef({ x: -100, y: -100 });
 
   useEffect(() => {
-    // Only enable on desktop/fine pointers
+    // Only enable on desktop fine pointer devices
     if (window.matchMedia('(pointer: coarse)').matches) return;
 
     document.body.classList.add('custom-cursor-active');
@@ -50,18 +50,18 @@ export const CustomCursor: React.FC = () => {
     document.addEventListener('mouseleave', onMouseLeave);
     document.addEventListener('mouseenter', onMouseEnter);
 
-    // Smooth inertia render loop
+    // Fast, responsive, snappy render loop (high lerp factor 0.65 for direct tracking)
     let animId: number;
     const render = () => {
-      pos.current.x += (target.current.x - pos.current.x) * 0.18;
-      pos.current.y += (target.current.y - pos.current.y) * 0.18;
+      pos.current.x += (target.current.x - pos.current.x) * 0.65;
+      pos.current.y += (target.current.y - pos.current.y) * 0.65;
 
       if (cursorDotRef.current) {
         cursorDotRef.current.style.transform = `translate3d(${target.current.x}px, ${target.current.y}px, 0)`;
       }
       if (cursorRingRef.current) {
         cursorRingRef.current.style.transform = `translate3d(${pos.current.x}px, ${pos.current.y}px, 0) ${
-          isHovered ? 'scale(1.8)' : 'scale(1)'
+          isHovered ? 'scale(1.5)' : 'scale(1)'
         }`;
       }
 
@@ -83,34 +83,25 @@ export const CustomCursor: React.FC = () => {
 
   return (
     <div style={{ pointerEvents: 'none', position: 'fixed', inset: 0, zIndex: 99999 }}>
-      {/* Precision Inertia Crosshair Ring */}
+      {/* Snappy Precision Outer Ring (No crosshair ticks) */}
       <div
         ref={cursorRingRef}
         style={{
           position: 'fixed',
-          top: -16,
-          left: -16,
-          width: 32,
-          height: 32,
+          top: -12,
+          left: -12,
+          width: 24,
+          height: 24,
           borderRadius: '50%',
-          border: isHovered ? '1px solid #00f5d4' : '1px solid rgba(255, 255, 255, 0.25)',
-          backgroundColor: isHovered ? 'rgba(0, 245, 212, 0.08)' : 'transparent',
-          boxShadow: isHovered ? '0 0 15px rgba(0, 245, 212, 0.4)' : 'none',
-          transition: 'border-color 0.2s, background-color 0.2s, box-shadow 0.2s',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          border: isHovered ? '1.5px solid #00f5d4' : '1px solid rgba(255, 255, 255, 0.35)',
+          backgroundColor: isHovered ? 'rgba(0, 245, 212, 0.12)' : 'transparent',
+          boxShadow: isHovered ? '0 0 15px rgba(0, 245, 212, 0.5)' : 'none',
+          transition: 'border-color 0.15s, background-color 0.15s, box-shadow 0.15s',
           willChange: 'transform',
         }}
-      >
-        {/* Subtle Crosshair indicator ticks */}
-        <div style={{ position: 'absolute', top: -3, left: '50%', width: 1, height: 4, background: isHovered ? '#00f5d4' : 'rgba(255,255,255,0.3)', transform: 'translateX(-50%)' }} />
-        <div style={{ position: 'absolute', bottom: -3, left: '50%', width: 1, height: 4, background: isHovered ? '#00f5d4' : 'rgba(255,255,255,0.3)', transform: 'translateX(-50%)' }} />
-        <div style={{ position: 'absolute', left: -3, top: '50%', width: 4, height: 1, background: isHovered ? '#00f5d4' : 'rgba(255,255,255,0.3)', transform: 'translateY(-50%)' }} />
-        <div style={{ position: 'absolute', right: -3, top: '50%', width: 4, height: 1, background: isHovered ? '#00f5d4' : 'rgba(255,255,255,0.3)', transform: 'translateY(-50%)' }} />
-      </div>
+      />
 
-      {/* Instant Center Point */}
+      {/* Instant Center Point Dot */}
       <div
         ref={cursorDotRef}
         style={{
@@ -121,27 +112,29 @@ export const CustomCursor: React.FC = () => {
           height: 6,
           borderRadius: '50%',
           backgroundColor: isHovered ? '#00f5d4' : '#ffffff',
-          boxShadow: isHovered ? '0 0 8px #00f5d4' : 'none',
+          boxShadow: isHovered ? '0 0 10px #00f5d4' : '0 0 4px rgba(255,255,255,0.5)',
           willChange: 'transform',
         }}
       />
 
-      {/* Hover text preview label if supplied */}
+      {/* Hover text label with clean rounded DM Sans font */}
       {hoverText && (
         <div
           style={{
             position: 'fixed',
-            transform: `translate3d(${target.current.x + 20}px, ${target.current.y + 20}px, 0)`,
-            fontFamily: 'Space Mono, monospace',
-            fontSize: '10px',
+            transform: `translate3d(${target.current.x + 16}px, ${target.current.y + 16}px, 0)`,
+            fontFamily: 'DM Sans, sans-serif',
+            fontWeight: 600,
+            fontSize: '11px',
             color: '#00f5d4',
-            background: 'rgba(5, 5, 5, 0.9)',
+            background: 'rgba(10, 12, 16, 0.95)',
             border: '1px solid rgba(0, 245, 212, 0.3)',
-            padding: '2px 8px',
-            borderRadius: '4px',
+            padding: '3px 10px',
+            borderRadius: '100px',
             textTransform: 'uppercase',
-            letterSpacing: '1px',
+            letterSpacing: '0.5px',
             whiteSpace: 'nowrap',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
           }}
         >
           {hoverText}

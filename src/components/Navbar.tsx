@@ -78,7 +78,7 @@ export const Navbar: React.FC = () => {
           <span className="status-dot" />
           <span
             style={{
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontWeight: 700,
               fontSize: '0.9rem',
               letterSpacing: '1px',
@@ -88,7 +88,7 @@ export const Navbar: React.FC = () => {
           </span>
           <span
             style={{
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.72rem',
               color: '#8e8e93',
               borderLeft: '1px solid rgba(255, 255, 255, 0.15)',
@@ -103,7 +103,7 @@ export const Navbar: React.FC = () => {
         {/* Location & Realtime Clock */}
         <div
           style={{
-            fontFamily: 'Space Mono, monospace',
+            fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.75rem',
             color: '#8e8e93',
             display: 'flex',
@@ -125,7 +125,7 @@ export const Navbar: React.FC = () => {
               background: 'none',
               border: 'none',
               color: '#f5f5f7',
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.8rem',
               cursor: 'pointer',
               display: 'flex',
@@ -146,7 +146,7 @@ export const Navbar: React.FC = () => {
               background: 'none',
               border: 'none',
               color: '#f5f5f7',
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.8rem',
               cursor: 'pointer',
               display: 'flex',
@@ -167,7 +167,7 @@ export const Navbar: React.FC = () => {
               background: 'none',
               border: 'none',
               color: '#f5f5f7',
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.8rem',
               cursor: 'pointer',
               display: 'flex',

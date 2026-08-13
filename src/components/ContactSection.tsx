@@ -107,13 +107,13 @@ export const ContactSection: React.FC = () => {
                     <Mail size={20} color="#00f5d4" />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       EMAIL DIRECTO
                     </div>
                     <a
                       href={`mailto:${email}`}
                       style={{
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.95rem',
                         fontWeight: 700,
                         color: '#ffffff',
@@ -138,7 +138,7 @@ export const ContactSection: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px',
-                    fontFamily: 'Space Mono, monospace',
+                    fontFamily: 'DM Sans, sans-serif',
                     fontSize: '0.75rem',
                     transition: 'all 0.2s ease',
                   }}
@@ -179,12 +179,12 @@ export const ContactSection: React.FC = () => {
                     <LinkedinIcon size={20} color="#00f2fe" />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       PERFIL PROFESIONAL
                     </div>
                     <div
                       style={{
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.95rem',
                         fontWeight: 700,
                         color: '#ffffff',
@@ -242,12 +242,12 @@ export const ContactSection: React.FC = () => {
                     <MessageSquare size={20} color="#0eefb7" />
                   </div>
                   <div>
-                    <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       WHATSAPP DIRECTO
                     </div>
                     <div
                       style={{
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.95rem',
                         fontWeight: 700,
                         color: '#ffffff',
@@ -304,7 +304,7 @@ export const ContactSection: React.FC = () => {
                     border: '1px solid #00f5d4',
                     borderRadius: '12px',
                     color: '#00f5d4',
-                    fontFamily: 'Space Mono, monospace',
+                    fontFamily: 'DM Sans, sans-serif',
                   }}
                 >
                   <Check size={32} style={{ marginBottom: '8px' }} />
@@ -319,7 +319,7 @@ export const ContactSection: React.FC = () => {
                     <label
                       style={{
                         display: 'block',
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
                         color: '#8e8e93',
                         marginBottom: '6px',
@@ -351,7 +351,7 @@ export const ContactSection: React.FC = () => {
                     <label
                       style={{
                         display: 'block',
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
                         color: '#8e8e93',
                         marginBottom: '6px',
@@ -383,7 +383,7 @@ export const ContactSection: React.FC = () => {
                     <label
                       style={{
                         display: 'block',
-                        fontFamily: 'Space Mono, monospace',
+                        fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
                         color: '#8e8e93',
                         marginBottom: '6px',

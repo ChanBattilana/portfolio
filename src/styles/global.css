@@ -17,9 +17,9 @@
   --border-subtle: rgba(255, 255, 255, 0.07);
   --border-cyan-glow: rgba(0, 245, 212, 0.35);
   
-  --font-display: 'Plus Jakarta Sans', 'Outfit', sans-serif;
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Sora', sans-serif;
+  --font-sans: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'DM Sans', sans-serif;
 
   --cursor-x: -100px;
   --cursor-y: -100px;
@@ -153,12 +153,13 @@ body {
   color: #fff;
 }
 
-/* Monospaced tag badge */
+/* Tag badge */
 .tag-badge {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
   border: 1px solid rgba(255, 255, 255, 0.08);

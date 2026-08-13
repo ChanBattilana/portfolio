@@ -47,7 +47,7 @@ export const BrowserMockupFrame: React.FC<BrowserMockupFrameProps> = ({ children
             justifyContent: 'space-between',
             alignItems: 'center',
             color: '#8e8e93',
-            fontFamily: 'Space Mono, monospace',
+            fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.75rem',
           }}
         >
@@ -69,7 +69,7 @@ export const BrowserMockupFrame: React.FC<BrowserMockupFrameProps> = ({ children
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
             }}
           >
@@ -150,7 +150,7 @@ export const BrowserMockupFrame: React.FC<BrowserMockupFrameProps> = ({ children
               padding: '6px 14px',
               border: '1px solid rgba(255, 255, 255, 0.08)',
               fontSize: '0.82rem',
-              fontFamily: 'Space Mono, monospace',
+              fontFamily: 'DM Sans, sans-serif',
               color: '#a0a0a8',
             }}
           >
@@ -193,7 +193,7 @@ export const BrowserMockupFrame: React.FC<BrowserMockupFrameProps> = ({ children
 
           {/* Right Controls */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.7rem', color: '#00f5d4' }}>
+            <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.7rem', color: '#00f5d4' }}>
               LOCAL: PORT 3000
             </span>
 

@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
         }}
       >
         {/* Left Monospaced Copyright */}
-        <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.78rem', color: '#8e8e93' }}>
+        <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.78rem', color: '#8e8e93' }}>
           <div>© 2026 SANTOS BATTILANA. ALL RIGHTS RESERVED.</div>
           <div style={{ fontSize: '0.7rem', color: 'rgba(255, 255, 255, 0.25)', marginTop: '4px' }}>
             Desarrollador full-stack & Gestión de Negocios Digitales (UCA, Buenos Aires)
@@ -37,7 +37,7 @@ export const Footer: React.FC = () => {
         {/* Middle Tech Specs */}
         <div
           style={{
-            fontFamily: 'Space Mono, monospace',
+            fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.72rem',
             color: '#00f5d4',
             display: 'flex',
@@ -65,7 +65,7 @@ export const Footer: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '6px',
-            fontFamily: 'Space Mono, monospace',
+            fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.75rem',
             transition: 'all 0.2s ease',
           }}

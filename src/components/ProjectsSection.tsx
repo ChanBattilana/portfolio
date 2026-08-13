@@ -101,7 +101,7 @@ export const ProjectsSection: React.FC = () => {
 
             <span
               style={{
-                fontFamily: 'Space Mono, monospace',
+                fontFamily: 'DM Sans, sans-serif',
                 fontSize: '0.8rem',
                 color: '#8e8e93',
               }}
@@ -169,7 +169,7 @@ export const ProjectsSection: React.FC = () => {
                     <div>
                       <span
                         style={{
-                          fontFamily: 'Space Mono, monospace',
+                          fontFamily: 'DM Sans, sans-serif',
                           fontSize: '0.75rem',
                           color: '#00f5d4',
                         }}
@@ -227,7 +227,7 @@ export const ProjectsSection: React.FC = () => {
                 <div style={{ marginBottom: '2rem' }}>
                   <div
                     style={{
-                      fontFamily: 'Space Mono, monospace',
+                      fontFamily: 'DM Sans, sans-serif',
                       fontSize: '0.82rem',
                       color: '#00f5d4',
                       marginBottom: '0.75rem',
@@ -275,7 +275,7 @@ export const ProjectsSection: React.FC = () => {
                       <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffbd2e' }} />
                       <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#27c93f' }} />
                     </div>
-                    <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '10px', color: '#00f5d4' }}>
+                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '10px', color: '#00f5d4' }}>
                       {project.displayUrl}
                     </span>
                   </div>
@@ -308,7 +308,7 @@ export const ProjectsSection: React.FC = () => {
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.03)', padding: '8px', borderRadius: 6 }}>
                         <span style={{ fontSize: '12px', color: '#00f5d4' }}>Champagnat</span>
-                        <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '14px', fontWeight: 700, color: '#fff' }}>24 — 19</span>
+                        <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 700, color: '#fff' }}>24 — 19</span>
                         <span style={{ fontSize: '12px', color: '#8e8e93' }}>CUBA</span>
                       </div>
                     </div>
@@ -328,10 +328,10 @@ export const ProjectsSection: React.FC = () => {
                 >
                   {project.metrics.map((m, idx) => (
                     <div key={idx}>
-                      <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '9px', color: '#8e8e93' }}>
+                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '9px', color: '#8e8e93' }}>
                         {m.label}
                       </div>
-                      <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.85rem', fontWeight: 700, color: '#ffffff' }}>
+                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#ffffff' }}>
                         {m.value}
                       </div>
                     </div>

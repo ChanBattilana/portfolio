@@ -141,7 +141,7 @@ export const AboutSection: React.FC = () => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
                 <GraduationCap size={26} color="#00f5d4" />
                 <div>
-                  <div style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.72rem', color: '#00f5d4' }}>
+                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#00f5d4' }}>
                     FORMACIÓN ACADÉMICA
                   </div>
                   <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.35rem', margin: 0 }}>
@@ -153,7 +153,7 @@ export const AboutSection: React.FC = () => {
               {/* Data Items */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
-                  <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.75rem', color: '#8e8e93' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
                     INSTITUCIÓN
                   </span>
                   <div style={{ color: '#fff', fontWeight: 500, marginTop: '4px' }}>
@@ -163,7 +163,7 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
-                  <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.75rem', color: '#8e8e93' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
                     DISCIPLINAS CLAVE
                   </span>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '8px' }}>
@@ -179,7 +179,7 @@ export const AboutSection: React.FC = () => {
                 </div>
 
                 <div>
-                  <span style={{ fontFamily: 'Space Mono, monospace', fontSize: '0.75rem', color: '#8e8e93' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
                     TECNOLOGÍAS & HERRAMIENTAS
                   </span>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '10px' }}>
