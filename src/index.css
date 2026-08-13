@@ -1,0 +1,2 @@
+/* Reset index.css to defer completely to global.css */
+@import './styles/global.css';
