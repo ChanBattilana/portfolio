@@ -160,18 +160,30 @@ export const Hero3DCanvas: React.FC = () => {
   }, []);
 
   return (
-    <div
-      ref={mountRef}
-      style={{
-        position: 'absolute',
-        top: 0,
-        right: '-5%',
-        width: '65%',
-        height: '100%',
-        pointerEvents: 'none',
-        zIndex: 0,
-        opacity: 0.9,
-      }}
-    />
+    <>
+      <div
+        ref={mountRef}
+        className="hero-3d-canvas-wrapper"
+        style={{
+          position: 'absolute',
+          top: 0,
+          right: '-5%',
+          width: '65%',
+          height: '100%',
+          pointerEvents: 'none',
+          zIndex: 0,
+          opacity: 0.85,
+        }}
+      />
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-3d-canvas-wrapper {
+            width: 100% !important;
+            right: 0 !important;
+            opacity: 0.35 !important;
+          }
+        }
+      `}</style>
+    </>
   );
 };

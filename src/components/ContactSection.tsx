@@ -42,8 +42,9 @@ export const ContactSection: React.FC = () => {
   return (
     <section
       id="contacto"
+      className="contact-section-container"
       style={{
-        padding: '7rem 0',
+        padding: '5rem 0',
         position: 'relative',
         zIndex: 10,
         borderTop: '1px solid rgba(255, 255, 255, 0.06)',
@@ -51,15 +52,15 @@ export const ContactSection: React.FC = () => {
     >
       <div className="container-12col">
         {/* Section Header */}
-        <div style={{ marginBottom: '4rem' }}>
+        <div style={{ marginBottom: '3rem' }}>
           <div className="mono-label" style={{ marginBottom: '0.75rem' }}>
-            <span style={{ color: '#00f5d4' }}>03 —</span> CONTACTO
+            <span style={{ color: '#00f5d4' }}>●</span> CONTACTO
           </div>
           <h2
             style={{
               fontFamily: 'Plus Jakarta Sans, sans-serif',
               fontWeight: 800,
-              fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+              fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
               color: '#ffffff',
               letterSpacing: '-0.03em',
               margin: 0,
@@ -67,6 +68,9 @@ export const ContactSection: React.FC = () => {
           >
             Iniciemos una conversación
           </h2>
+          <p style={{ color: '#a0a0ab', fontSize: '1rem', marginTop: '0.75rem', maxWidth: '600px' }}>
+            ¿Tienes una idea, consulta o proyecto en mente? Escríbeme directamente por cualquier medio.
+          </p>
         </div>
 
         {/* Contact Links & Quick Ping Form Grid */}
@@ -74,7 +78,7 @@ export const ContactSection: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '3rem',
+            gap: '2.5rem',
             alignItems: 'start',
           }}
         >
@@ -83,15 +87,17 @@ export const ContactSection: React.FC = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {/* Email Card */}
               <div
-                className="glass-card"
+                className="glass-card contact-item-card"
                 style={{
-                  padding: '1.75rem 2rem',
+                  padding: '1.5rem 1.75rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
+                  gap: '12px',
+                  flexWrap: 'wrap',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', minWidth: 0, flex: 1 }}>
                   <div
                     style={{
                       width: 44,
@@ -102,22 +108,25 @@ export const ContactSection: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      flexShrink: 0,
                     }}
                   >
                     <Mail size={20} color="#00f5d4" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       EMAIL DIRECTO
                     </div>
                     <a
                       href={`mailto:${email}`}
+                      className="text-break"
                       style={{
                         fontFamily: 'DM Sans, sans-serif',
-                        fontSize: '0.95rem',
+                        fontSize: '0.9rem',
                         fontWeight: 700,
                         color: '#ffffff',
                         textDecoration: 'none',
+                        display: 'block',
                       }}
                     >
                       {email}
@@ -141,6 +150,7 @@ export const ContactSection: React.FC = () => {
                     fontFamily: 'DM Sans, sans-serif',
                     fontSize: '0.75rem',
                     transition: 'all 0.2s ease',
+                    flexShrink: 0,
                   }}
                 >
                   {copiedEmail ? <Check size={14} /> : <Copy size={14} />}
@@ -153,17 +163,18 @@ export const ContactSection: React.FC = () => {
                 href={linkedinUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="glass-card"
+                className="glass-card contact-item-card"
                 data-cursor="LINKEDIN"
                 style={{
-                  padding: '1.75rem 2rem',
+                  padding: '1.5rem 1.75rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
+                  gap: '12px',
                   textDecoration: 'none',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', minWidth: 0 }}>
                   <div
                     style={{
                       width: 44,
@@ -174,18 +185,20 @@ export const ContactSection: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      flexShrink: 0,
                     }}
                   >
                     <LinkedinIcon size={20} color="#00f2fe" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       PERFIL PROFESIONAL
                     </div>
                     <div
+                      className="text-break"
                       style={{
                         fontFamily: 'DM Sans, sans-serif',
-                        fontSize: '0.95rem',
+                        fontSize: '0.9rem',
                         fontWeight: 700,
                         color: '#ffffff',
                       }}
@@ -205,6 +218,7 @@ export const ContactSection: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#fff',
+                    flexShrink: 0,
                   }}
                 >
                   <ArrowUpRight size={18} />
@@ -216,17 +230,18 @@ export const ContactSection: React.FC = () => {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="glass-card"
+                className="glass-card contact-item-card"
                 data-cursor="WHATSAPP"
                 style={{
-                  padding: '1.75rem 2rem',
+                  padding: '1.5rem 1.75rem',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
+                  gap: '12px',
                   textDecoration: 'none',
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '14px', minWidth: 0 }}>
                   <div
                     style={{
                       width: 44,
@@ -237,18 +252,19 @@ export const ContactSection: React.FC = () => {
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
+                      flexShrink: 0,
                     }}
                   >
                     <MessageSquare size={20} color="#0eefb7" />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0 }}>
                     <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
                       WHATSAPP DIRECTO
                     </div>
                     <div
                       style={{
                         fontFamily: 'DM Sans, sans-serif',
-                        fontSize: '0.95rem',
+                        fontSize: '0.9rem',
                         fontWeight: 700,
                         color: '#ffffff',
                       }}
@@ -268,6 +284,7 @@ export const ContactSection: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     color: '#fff',
+                    flexShrink: 0,
                   }}
                 >
                   <ArrowUpRight size={18} />
@@ -280,9 +297,9 @@ export const ContactSection: React.FC = () => {
           <div style={{ gridColumn: 'span 6' }} className="col-mobile-12">
             <form
               onSubmit={handleSubmit}
-              className="glass-card"
+              className="glass-card contact-form-card"
               style={{
-                padding: '2.5rem',
+                padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1.25rem',
@@ -290,7 +307,7 @@ export const ContactSection: React.FC = () => {
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
                 <Sparkles size={18} color="#00f5d4" />
-                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.3rem', margin: 0 }}>
+                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.2rem', margin: 0 }}>
                   Enviar mensaje directo
                 </h3>
               </div>
@@ -412,7 +429,7 @@ export const ContactSection: React.FC = () => {
                     />
                   </div>
 
-                  <button type="submit" className="btn-cyan" style={{ marginTop: '0.5rem', justifyContent: 'center' }}>
+                  <button type="submit" className="btn-cyan" style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center' }}>
                     <span>Enviar mensaje</span>
                     <Send size={16} />
                   </button>
@@ -422,6 +439,21 @@ export const ContactSection: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 768px) {
+          .contact-section-container {
+            padding: 3.5rem 0 !important;
+          }
+          .contact-item-card {
+            padding: 1.25rem 1rem !important;
+          }
+          .contact-form-card {
+            padding: 1.25rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
+

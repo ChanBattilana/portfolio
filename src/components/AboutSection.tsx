@@ -5,8 +5,9 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="sobre-mi"
+      className="about-section-container"
       style={{
-        padding: '7rem 0',
+        padding: '5rem 0',
         position: 'relative',
         zIndex: 10,
         borderTop: '1px solid rgba(255, 255, 255, 0.06)',
@@ -15,21 +16,21 @@ export const AboutSection: React.FC = () => {
     >
       <div className="container-12col">
         {/* Section Header */}
-        <div style={{ marginBottom: '3.5rem' }}>
+        <div style={{ marginBottom: '3rem' }}>
           <div className="mono-label" style={{ marginBottom: '0.75rem' }}>
-            <span style={{ color: '#00f5d4' }}>02 —</span> SOBRE MÍ
+            <span style={{ color: '#00f5d4' }}>●</span> SOBRE MÍ
           </div>
           <h2
             style={{
               fontFamily: 'Plus Jakarta Sans, sans-serif',
               fontWeight: 800,
-              fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+              fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
               color: '#ffffff',
               letterSpacing: '-0.03em',
               margin: 0,
             }}
           >
-            Ingeniería de software + Visión de negocios
+            Tecnología moderna + Visión de negocios
           </h2>
         </div>
 
@@ -38,7 +39,7 @@ export const AboutSection: React.FC = () => {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(12, 1fr)',
-            gap: '3rem',
+            gap: '2.5rem',
             alignItems: 'start',
           }}
         >
@@ -53,30 +54,30 @@ export const AboutSection: React.FC = () => {
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '1.2rem',
+                fontSize: 'clamp(1rem, 2vw, 1.2rem)',
                 color: '#e0e0e6',
                 lineHeight: 1.7,
-                marginBottom: '1.75rem',
+                marginBottom: '1.5rem',
               }}
             >
-              Soy desarrollador full-stack y especialista en gestión de negocios digitales formado en la{' '}
+              Soy desarrollador web y especialista en negocios digitales graduado de la{' '}
               <strong style={{ color: '#00f5d4', fontWeight: 600 }}>
                 UCA (Universidad Católica Argentina, Buenos Aires)
               </strong>
-              . Mi trabajo se sitúa en la intersección exacta entre la precisión técnica del desarrollo de software moderno y la visión estratégica operacional de los productos digitales.
+              . Mi objetivo es unir la programación moderna con la estrategia para crear sitios web y sistemas digitales exitosos, rápidos y sencillos de usar.
             </p>
 
             <p
               style={{
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
-                fontSize: '1.05rem',
+                fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
                 color: '#a0a0ab',
                 lineHeight: 1.7,
-                marginBottom: '2.5rem',
+                marginBottom: '2rem',
               }}
             >
-              Diseño e implemento arquitecturas web robustas, sistemas en tiempo real y aplicaciones web escalables orientadas a optimizar procesos de negocio, conversión de ecommerce y experiencia de usuario.
+              Diseño páginas web, tiendas online y aplicaciones a medida enfocadas en resolver necesidades reales, mejorar ventas y brindar una excelente experiencia a cada visitante.
             </p>
 
             {/* Core Pillars Grid */}
@@ -84,41 +85,41 @@ export const AboutSection: React.FC = () => {
               style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr',
-                gap: '1.5rem',
+                gap: '1.25rem',
               }}
-              className="col-mobile-12"
+              className="col-mobile-12 grid-mobile-1"
             >
               <div
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                   borderRadius: 12,
                   background: 'rgba(255, 255, 255, 0.025)',
                   border: '1px solid rgba(255, 255, 255, 0.06)',
                 }}
               >
                 <Code size={20} color="#00f5d4" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.1rem', margin: '0 0 8px 0' }}>
-                  Full-Stack Architecture
+                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.05rem', margin: '0 0 8px 0' }}>
+                  Desarrollo Web Completo
                 </h4>
                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#8e8e93', margin: 0, lineHeight: 1.5 }}>
-                  Desarrollo frontend React/TypeScript, APIs REST/GraphQL, bases de datos y despliegue continuo en el edge.
+                  Creación de páginas web y aplicaciones modernas que cargan al instante y funcionan de forma impecable en celulares y computadoras.
                 </p>
               </div>
 
               <div
                 style={{
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                   borderRadius: 12,
                   background: 'rgba(255, 255, 255, 0.025)',
                   border: '1px solid rgba(255, 255, 255, 0.06)',
                 }}
               >
                 <Briefcase size={20} color="#00f2fe" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.1rem', margin: '0 0 8px 0' }}>
-                  Gestión de Negocios
+                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.05rem', margin: '0 0 8px 0' }}>
+                  Estrategia de Negocios
                 </h4>
                 <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#8e8e93', margin: 0, lineHeight: 1.5 }}>
-                  Modelado de negocios digitales, optimización de conversión, estrategia de producto y métricas operacionales.
+                  Planificación digital, optimización de tiendas online y mejoras en los procesos de atención y conversión de clientes.
                 </p>
               </div>
             </div>
@@ -132,29 +133,29 @@ export const AboutSection: React.FC = () => {
             className="col-mobile-12"
           >
             <div
-              className="glass-card"
+              className="glass-card about-uca-card"
               style={{
-                padding: '2.5rem',
+                padding: '2rem',
                 border: '1px solid rgba(0, 245, 212, 0.2)',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.75rem' }}>
                 <GraduationCap size={26} color="#00f5d4" />
                 <div>
-                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#00f5d4' }}>
-                    FORMACIÓN ACADÉMICA
+                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#00f5d4', fontWeight: 600 }}>
+                    FORMACIÓN PROFESIONAL
                   </div>
-                  <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.35rem', margin: 0 }}>
+                  <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.25rem', margin: 0 }}>
                     UCA Buenos Aires
                   </h3>
                 </div>
               </div>
 
               {/* Data Items */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
                   <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
-                    INSTITUCIÓN
+                    UNIVERSIDAD
                   </span>
                   <div style={{ color: '#fff', fontWeight: 500, marginTop: '4px' }}>
                     Universidad Católica Argentina (UCA)
@@ -164,26 +165,26 @@ export const AboutSection: React.FC = () => {
 
                 <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
                   <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
-                    DISCIPLINAS CLAVE
+                    ESPECIALIDADES
                   </span>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '8px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: '#e0e0e6' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#e0e0e6' }}>
                       <CheckCircle2 size={14} color="#00f5d4" />
                       <span>Gestión de Negocios Digitales</span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', color: '#e0e0e6' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#e0e0e6' }}>
                       <CheckCircle2 size={14} color="#00f5d4" />
-                      <span>Ingeniería & Desarrollo Full-Stack</span>
+                      <span>Desarrollo de Software Web</span>
                     </div>
                   </div>
                 </div>
 
                 <div>
                   <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
-                    TECNOLOGÍAS & HERRAMIENTAS
+                    TECNOLOGÍAS QUE UTILIZO
                   </span>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '10px' }}>
-                    {['React', 'TypeScript', 'Node.js', 'Next.js', 'Cloudflare', 'PostgreSQL', 'Three.js', 'Tailwind', 'E-commerce API'].map((tech) => (
+                    {['React', 'TypeScript', 'Node.js', 'Next.js', 'Bases de datos', 'Tiendas Online', 'E-commerce', 'Diseño Web'].map((tech) => (
                       <span key={tech} className="tag-badge">
                         {tech}
                       </span>
@@ -202,7 +203,16 @@ export const AboutSection: React.FC = () => {
             grid-column: span 12 !important;
           }
         }
+        @media (max-width: 768px) {
+          .about-section-container {
+            padding: 3.5rem 0 !important;
+          }
+          .about-uca-card {
+            padding: 1.25rem !important;
+          }
+        }
       `}</style>
     </section>
   );
 };
+

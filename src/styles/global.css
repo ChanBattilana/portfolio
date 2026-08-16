@@ -224,15 +224,43 @@ body {
   animation: statusPulse 2s infinite;
 }
 
-/* Layout Utilities */
+/* Layout & Mobile Utilities */
 .container-12col {
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 2rem;
+  width: 100%;
+}
+
+.text-break {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.show-mobile {
+  display: none !important;
 }
 
 @media (max-width: 768px) {
   .container-12col {
-    padding: 0 1.25rem;
+    padding: 0 1rem;
+  }
+
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .show-mobile {
+    display: flex !important;
+  }
+
+  .mobile-stack {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .grid-mobile-1 {
+    grid-template-columns: 1fr !important;
   }
 }
+

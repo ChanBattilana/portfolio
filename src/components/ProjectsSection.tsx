@@ -24,17 +24,17 @@ export const ProjectsSection: React.FC = () => {
       id: 'dedicar',
       number: '01',
       title: 'Dedicar',
-      subtitle: 'Catálogo, pedidos, logística',
+      subtitle: 'Catálogo digital, pedidos y logística',
       description:
-        'Plataforma integral de gestión de producto, catálogo digital interactivo, procesamiento de pedidos en tiempo real y trazabilidad logística automatizada para empresas en crecimiento.',
-      tags: ['Web', 'E-commerce', 'Producto', 'Gestión'],
+        'Plataforma web para negocios que permite publicar productos en un catálogo digital interactivo, recibir pedidos de clientes y coordinar envíos de forma rápida y sencilla.',
+      tags: ['Web', 'Tienda Online', 'Catálogo', 'Gestión de ventas'],
       url: 'https://dedicar.app',
       displayUrl: 'dedicar.app',
       icon: <ShoppingBag size={22} color="#00f5d4" />,
       metrics: [
-        { label: 'PROCESAMIENTO', value: '< 100ms' },
-        { label: 'PRODUCTOS', value: '10,000+' },
-        { label: 'EFICIENCIA', value: '+45%' },
+        { label: 'VELOCIDAD', value: 'Instantánea' },
+        { label: 'PRODUCTOS', value: 'Más de 10.000' },
+        { label: 'EFICIENCIA', value: '+45% ventas' },
       ],
       accentColor: '#00f5d4',
       previewType: 'dedicar',
@@ -43,17 +43,17 @@ export const ProjectsSection: React.FC = () => {
       id: 'champagnat',
       number: '02',
       title: 'Champagnat Resultados',
-      subtitle: 'URBA Top 14 results & Realtime match tracker',
+      subtitle: 'Marcadores y posiciones en vivo para Rugby URBA',
       description:
-        'Sistema de transmisión de marcadores en tiempo real, tabla de posiciones automatizada, estadísticas de jugadores y notificaciones instantáneas para la URBA Top 14 de Rugby.',
-      tags: ['React', 'Realtime', 'Deportes', 'Cloudflare'],
+        'Aplicación web que transmite resultados en directo, posiciones actualizadas automáticamente y estadísticas de partidos para seguir el torneo URBA Top 14.',
+      tags: ['Web', 'En Vivo', 'Deportes', 'Estadísticas'],
       url: 'https://champagnat-resultados.urba.ar',
       displayUrl: 'champagnat-resultados.urba.ar',
       icon: <Trophy size={22} color="#00f2fe" />,
       metrics: [
-        { label: 'LATENCIA', value: 'Real-Time' },
-        { label: 'INFRAESTRUCTURA', value: 'Edge Cloudflare' },
-        { label: 'DISPONIBILIDAD', value: '99.99%' },
+        { label: 'ACTUALIZACIÓN', value: 'En vivo al instante' },
+        { label: 'PLATAFORMA', value: 'Web & Celular' },
+        { label: 'DISPONIBILIDAD', value: '99.9% online' },
       ],
       accentColor: '#00f2fe',
       previewType: 'champa',
@@ -63,8 +63,9 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="proyectos"
+      className="projects-section-container"
       style={{
-        padding: '7rem 0',
+        padding: '5rem 0',
         position: 'relative',
         zIndex: 10,
         borderTop: '1px solid rgba(255, 255, 255, 0.06)',
@@ -72,9 +73,9 @@ export const ProjectsSection: React.FC = () => {
     >
       <div className="container-12col">
         {/* Section Header */}
-        <div style={{ marginBottom: '4rem' }}>
+        <div style={{ marginBottom: '3rem' }}>
           <div className="mono-label" style={{ marginBottom: '0.75rem' }}>
-            <span style={{ color: '#00f5d4' }}>01 —</span> PROYECTOS SELECCIONADOS
+            <span style={{ color: '#00f5d4' }}>●</span> PROYECTOS DESTACADOS
           </div>
 
           <div
@@ -83,14 +84,14 @@ export const ProjectsSection: React.FC = () => {
               justifyContent: 'space-between',
               alignItems: 'flex-end',
               flexWrap: 'wrap',
-              gap: '1.5rem',
+              gap: '1.25rem',
             }}
           >
             <h2
               style={{
                 fontFamily: 'Plus Jakarta Sans, sans-serif',
                 fontWeight: 800,
-                fontSize: 'clamp(2.2rem, 4.5vw, 3.8rem)',
+                fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
                 color: '#ffffff',
                 letterSpacing: '-0.03em',
                 margin: 0,
@@ -102,11 +103,11 @@ export const ProjectsSection: React.FC = () => {
             <span
               style={{
                 fontFamily: 'DM Sans, sans-serif',
-                fontSize: '0.8rem',
+                fontSize: '0.85rem',
                 color: '#8e8e93',
               }}
             >
-              ( 02 CASOS DE ESTUDIO )
+              ( Casos de éxito reales )
             </span>
           </div>
         </div>
@@ -115,22 +116,21 @@ export const ProjectsSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(380px, 1fr))',
-            gap: '2.5rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '2rem',
           }}
         >
           {projects.map((project) => (
             <div
               key={project.id}
-              className="glass-card"
+              className="glass-card project-card-item"
               data-cursor="VER DETALLES"
               onClick={() => setActiveModal(project)}
               style={{
-                padding: '2.5rem',
+                padding: '2rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                minHeight: '520px',
                 cursor: 'pointer',
               }}
             >
@@ -141,7 +141,7 @@ export const ProjectsSection: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: '1.75rem',
+                    marginBottom: '1.5rem',
                   }}
                 >
                   <div
@@ -161,6 +161,7 @@ export const ProjectsSection: React.FC = () => {
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        flexShrink: 0,
                       }}
                     >
                       {project.icon}
@@ -180,7 +181,7 @@ export const ProjectsSection: React.FC = () => {
                         style={{
                           fontFamily: 'Plus Jakarta Sans, sans-serif',
                           fontWeight: 800,
-                          fontSize: '1.75rem',
+                          fontSize: '1.5rem',
                           color: '#ffffff',
                           margin: 0,
                           lineHeight: 1.1,
@@ -209,6 +210,7 @@ export const ProjectsSection: React.FC = () => {
                       color: '#ffffff',
                       textDecoration: 'none',
                       transition: 'all 0.2s ease',
+                      flexShrink: 0,
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = project.accentColor;
@@ -224,13 +226,13 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Subtitle & Description */}
-                <div style={{ marginBottom: '2rem' }}>
+                <div style={{ marginBottom: '1.5rem' }}>
                   <div
                     style={{
                       fontFamily: 'DM Sans, sans-serif',
                       fontSize: '0.82rem',
                       color: '#00f5d4',
-                      marginBottom: '0.75rem',
+                      marginBottom: '0.5rem',
                     }}
                   >
                     ( {project.subtitle} )
@@ -238,7 +240,7 @@ export const ProjectsSection: React.FC = () => {
                   <p
                     style={{
                       fontFamily: 'Inter, sans-serif',
-                      fontSize: '0.95rem',
+                      fontSize: '0.92rem',
                       color: '#a0a0ab',
                       lineHeight: 1.6,
                       margin: 0,
@@ -254,8 +256,8 @@ export const ProjectsSection: React.FC = () => {
                     borderRadius: 12,
                     border: '1px solid rgba(255, 255, 255, 0.08)',
                     backgroundColor: 'rgba(5, 7, 10, 0.8)',
-                    padding: '1.25rem',
-                    marginBottom: '2rem',
+                    padding: '1rem',
+                    marginBottom: '1.5rem',
                     position: 'relative',
                     overflow: 'hidden',
                   }}
@@ -282,14 +284,14 @@ export const ProjectsSection: React.FC = () => {
 
                   {project.previewType === 'dedicar' ? (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px', color: '#f5f5f7' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#f5f5f7' }}>
                         <span>Catálogo Digital #4092</span>
-                        <span style={{ color: '#00f5d4' }}>● Stock Sincronizado</span>
+                        <span style={{ color: '#00f5d4' }}>● Sincronizado</span>
                       </div>
                       <div style={{ height: 6, background: 'rgba(255,255,255,0.06)', borderRadius: 3 }}>
                         <div style={{ width: '80%', height: '100%', background: '#00f5d4', borderRadius: 3 }} />
                       </div>
-                      <div style={{ display: 'flex', gap: '8px', marginTop: '4px' }}>
+                      <div style={{ display: 'flex', gap: '6px', marginTop: '4px', flexWrap: 'wrap' }}>
                         <span style={{ fontSize: '10px', background: 'rgba(255,255,255,0.05)', padding: '2px 6px', borderRadius: 4 }}>
                           Logística 24/7
                         </span>
@@ -301,15 +303,15 @@ export const ProjectsSection: React.FC = () => {
                   ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '12px', color: '#fff', fontWeight: 600 }}>URBA TOP 14 - FECHA 08</span>
+                        <span style={{ fontSize: '11px', color: '#fff', fontWeight: 600 }}>URBA TOP 14 - FECHA 08</span>
                         <span style={{ fontSize: '10px', background: '#00f2fe', color: '#000', padding: '2px 6px', borderRadius: 4, fontWeight: 700 }}>
                           LIVE 80'
                         </span>
                       </div>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.03)', padding: '8px', borderRadius: 6 }}>
-                        <span style={{ fontSize: '12px', color: '#00f5d4' }}>Champagnat</span>
-                        <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '14px', fontWeight: 700, color: '#fff' }}>24 — 19</span>
-                        <span style={{ fontSize: '12px', color: '#8e8e93' }}>CUBA</span>
+                        <span style={{ fontSize: '11px', color: '#00f5d4' }}>Champagnat</span>
+                        <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 700, color: '#fff' }}>24 — 19</span>
+                        <span style={{ fontSize: '11px', color: '#8e8e93' }}>CUBA</span>
                       </div>
                     </div>
                   )}
@@ -317,11 +319,12 @@ export const ProjectsSection: React.FC = () => {
 
                 {/* Metrics row */}
                 <div
+                  className="project-metrics-grid"
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
                     gap: '12px',
-                    marginBottom: '2rem',
+                    marginBottom: '1.5rem',
                     borderTop: '1px dashed rgba(255, 255, 255, 0.1)',
                     paddingTop: '1rem',
                   }}
@@ -364,16 +367,18 @@ export const ProjectsSection: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '2rem',
+            padding: '1rem',
           }}
           onClick={() => setActiveModal(null)}
         >
           <div
-            className="glass-card"
+            className="glass-card project-modal-content"
             style={{
               maxWidth: '640px',
               width: '100%',
-              padding: '3rem',
+              maxHeight: '90vh',
+              overflowY: 'auto',
+              padding: '2rem',
               borderColor: '#00f5d4',
             }}
             onClick={(e) => e.stopPropagation()}
@@ -381,7 +386,7 @@ export const ProjectsSection: React.FC = () => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 {activeModal.icon}
-                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '2rem', color: '#fff', margin: 0 }}>
+                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '1.6rem', color: '#fff', margin: 0 }}>
                   {activeModal.title}
                 </h3>
               </div>
@@ -395,6 +400,7 @@ export const ProjectsSection: React.FC = () => {
                   width: 32,
                   height: 32,
                   cursor: 'pointer',
+                  flexShrink: 0,
                 }}
               >
                 ✕
@@ -411,7 +417,7 @@ export const ProjectsSection: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="btn-cyan"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: 'none', width: '100%', justifyContent: 'center' }}
               >
                 <span>Visitar sitio web oficial</span>
                 <ExternalLink size={16} />
@@ -420,6 +426,21 @@ export const ProjectsSection: React.FC = () => {
           </div>
         </div>
       )}
+
+      <style>{`
+        @media (max-width: 768px) {
+          .projects-section-container {
+            padding: 3.5rem 0 !important;
+          }
+          .project-card-item {
+            padding: 1.25rem !important;
+          }
+          .project-modal-content {
+            padding: 1.25rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };
+
