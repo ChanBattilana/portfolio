@@ -10,7 +10,7 @@ export const Hero3DCanvas: React.FC = () => {
 
     // Scene setup
     const scene = new THREE.Scene();
-    
+
     // Camera
     const camera = new THREE.PerspectiveCamera(
       45,
@@ -18,54 +18,136 @@ export const Hero3DCanvas: React.FC = () => {
       0.1,
       1000
     );
-    camera.position.z = 6;
+    camera.position.z = 7;
 
     // Renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
 
-    // Geometry: Detailed sphere for organic mesh distortion
-    const geometry = new THREE.IcosahedronGeometry(2.1, 40);
-    const originalPositions = geometry.attributes.position.clone();
+    // Group for the entire interactive 3D object
+    const mainGroup = new THREE.Group();
+    scene.add(mainGroup);
 
-    // Material: Liquid Chrome / Titanium Mercury Physical Mesh
-    const material = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#141416'),
-      emissive: new THREE.Color('#0a0a0c'),
-      roughness: 0.12,
-      metalness: 0.96,
-      clearcoat: 1.0,
-      clearcoatRoughness: 0.05,
-      wireframe: false,
-      flatShading: false,
+    // 1. Central Wireframe Polyhedron (Core)
+    const coreGeometry = new THREE.IcosahedronGeometry(1.2, 1);
+    const coreMaterial = new THREE.MeshBasicMaterial({
+      color: 0xffffff,
+      wireframe: true,
       transparent: true,
-      opacity: 0.92,
+      opacity: 0.28,
+    });
+    const coreMesh = new THREE.Mesh(coreGeometry, coreMaterial);
+    mainGroup.add(coreMesh);
+
+    // Inner glowing vertices
+    const vertexPointsGeo = new THREE.IcosahedronGeometry(1.2, 1);
+    const vertexPointsMat = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.08,
+      transparent: true,
+      opacity: 0.9,
+    });
+    const vertexPoints = new THREE.Points(vertexPointsGeo, vertexPointsMat);
+    mainGroup.add(vertexPoints);
+
+    // 2. Multi-Axis Orbital Gyroscope Rings
+    const ringMaterials = [
+      new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.55 }),
+      new THREE.LineBasicMaterial({ color: 0xe4e4e7, transparent: true, opacity: 0.4 }),
+      new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.6 }),
+    ];
+
+    const rings: THREE.LineLoop[] = [];
+
+    // Outer Ring 1
+    const ring1Geo = new THREE.BufferGeometry();
+    const ring1Pts: THREE.Vector3[] = [];
+    const segments = 96;
+    for (let i = 0; i <= segments; i++) {
+      const theta = (i / segments) * Math.PI * 2;
+      ring1Pts.push(new THREE.Vector3(Math.cos(theta) * 2.3, Math.sin(theta) * 2.3, 0));
+    }
+    ring1Geo.setFromPoints(ring1Pts);
+    const ring1 = new THREE.LineLoop(ring1Geo, ringMaterials[0]);
+    ring1.rotation.x = Math.PI / 3;
+    mainGroup.add(ring1);
+    rings.push(ring1);
+
+    // Outer Ring 2
+    const ring2Geo = new THREE.BufferGeometry();
+    const ring2Pts: THREE.Vector3[] = [];
+    for (let i = 0; i <= segments; i++) {
+      const theta = (i / segments) * Math.PI * 2;
+      ring2Pts.push(new THREE.Vector3(Math.cos(theta) * 2.6, 0, Math.sin(theta) * 2.6));
+    }
+    ring2Geo.setFromPoints(ring2Pts);
+    const ring2 = new THREE.LineLoop(ring2Geo, ringMaterials[1]);
+    ring2.rotation.z = Math.PI / 4;
+    mainGroup.add(ring2);
+    rings.push(ring2);
+
+    // Outer Ring 3
+    const ring3Geo = new THREE.BufferGeometry();
+    const ring3Pts: THREE.Vector3[] = [];
+    for (let i = 0; i <= segments; i++) {
+      const theta = (i / segments) * Math.PI * 2;
+      ring3Pts.push(new THREE.Vector3(0, Math.cos(theta) * 2.45, Math.sin(theta) * 2.45));
+    }
+    ring3Geo.setFromPoints(ring3Pts);
+    const ring3 = new THREE.LineLoop(ring3Geo, ringMaterials[2]);
+    ring3.rotation.y = Math.PI / 5;
+    mainGroup.add(ring3);
+    rings.push(ring3);
+
+    // Satellite beads traveling on rings
+    const beadGeometry = new THREE.SphereGeometry(0.06, 12, 12);
+    const beadMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const bead1 = new THREE.Mesh(beadGeometry, beadMaterial);
+    const bead2 = new THREE.Mesh(beadGeometry, beadMaterial);
+    ring1.add(bead1);
+    ring2.add(bead2);
+
+    // 3. Floating Particle Constellation
+    const particleCount = 420;
+    const particlePositions = new Float32Array(particleCount * 3);
+    const particleScales = new Float32Array(particleCount);
+
+    for (let i = 0; i < particleCount; i++) {
+      const radius = 1.8 + Math.random() * 2.6;
+      const u = Math.random();
+      const v = Math.random();
+      const theta = u * 2.0 * Math.PI;
+      const phi = Math.acos(2.0 * v - 1.0);
+      const r = Math.cbrt(radius) * 2.2;
+      const sinPhi = Math.sin(phi);
+
+      particlePositions[i * 3] = r * sinPhi * Math.cos(theta);
+      particlePositions[i * 3 + 1] = r * sinPhi * Math.sin(theta);
+      particlePositions[i * 3 + 2] = r * Math.cos(phi);
+      particleScales[i] = Math.random() * 0.04 + 0.02;
+    }
+
+    const particlesGeometry = new THREE.BufferGeometry();
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+
+    const particlesMaterial = new THREE.PointsMaterial({
+      color: 0xffffff,
+      size: 0.04,
+      transparent: true,
+      opacity: 0.65,
+      blending: THREE.AdditiveBlending,
     });
 
-    const mesh = new THREE.Mesh(geometry, material);
-    scene.add(mesh);
+    const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
+    mainGroup.add(particleSystem);
 
-    // High-Key Crisp White Studio Lighting
-    const whiteKeyLight = new THREE.PointLight('#ffffff', 32, 25);
-    whiteKeyLight.position.set(4, 3, 4);
-    scene.add(whiteKeyLight);
-
-    const silverFillLight = new THREE.PointLight('#f4f4f5', 24, 20);
-    silverFillLight.position.set(-4, -3, 2);
-    scene.add(silverFillLight);
-
-    const topRimLight = new THREE.PointLight('#ffffff', 30, 20);
-    topRimLight.position.set(0, 5, -2);
-    scene.add(topRimLight);
-
-    const ambientLight = new THREE.AmbientLight('#ffffff', 1.0);
+    // Subtle ambient soft lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
     scene.add(ambientLight);
 
-    // Mouse parallax tracking
+    // Interactive mouse tracking with smooth inertia
     let mouseX = 0;
     let mouseY = 0;
     let targetX = 0;
@@ -80,8 +162,7 @@ export const Hero3DCanvas: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Simplex/Perlin-style 3D noise vertex wave function
-    let clock = new THREE.Clock();
+    const clock = new THREE.Clock();
 
     const animate = () => {
       const elapsedTime = clock.getElapsedTime();
@@ -90,33 +171,31 @@ export const Hero3DCanvas: React.FC = () => {
       targetX += (mouseX - targetX) * 0.05;
       targetY += (mouseY - targetY) * 0.05;
 
-      mesh.rotation.y = elapsedTime * 0.15 + targetX * 0.4;
-      mesh.rotation.x = Math.sin(elapsedTime * 0.1) * 0.2 + targetY * 0.3;
+      // Group rotation guided by mouse
+      mainGroup.rotation.y = elapsedTime * 0.12 + targetX * 0.55;
+      mainGroup.rotation.x = targetY * 0.45;
 
-      // Dynamic 3D organic mesh vertex distortion
-      const positions = geometry.attributes.position;
-      const count = positions.count;
+      // Core rotation
+      coreMesh.rotation.x = elapsedTime * 0.25;
+      coreMesh.rotation.y = elapsedTime * 0.35;
+      vertexPoints.rotation.x = elapsedTime * 0.25;
+      vertexPoints.rotation.y = elapsedTime * 0.35;
 
-      for (let i = 0; i < count; i++) {
-        const u = originalPositions.getX(i);
-        const v = originalPositions.getY(i);
-        const w = originalPositions.getZ(i);
+      // Independent ring rotations for gyroscope effect
+      ring1.rotation.z = elapsedTime * 0.35;
+      ring2.rotation.y = elapsedTime * 0.25;
+      ring3.rotation.x = elapsedTime * 0.3;
 
-        // Calculate organic wave displacement
-        const distortion =
-          Math.sin(u * 2.5 + elapsedTime * 1.5) * 0.12 +
-          Math.cos(v * 3.0 + elapsedTime * 1.2) * 0.12 +
-          Math.sin(w * 2.0 + elapsedTime * 1.8) * 0.1;
+      // Move beads along rings
+      bead1.position.x = Math.cos(elapsedTime * 1.5) * 2.3;
+      bead1.position.y = Math.sin(elapsedTime * 1.5) * 2.3;
 
-        // Apply radial displacement vector
-        const vector = new THREE.Vector3(u, v, w).normalize();
-        vector.multiplyScalar(2.1 + distortion);
+      bead2.position.x = Math.cos(elapsedTime * 1.2) * 2.6;
+      bead2.position.z = Math.sin(elapsedTime * 1.2) * 2.6;
 
-        positions.setXYZ(i, vector.x, vector.y, vector.z);
-      }
-
-      positions.needsUpdate = true;
-      geometry.computeVertexNormals();
+      // Gentle wave float on particle system
+      particleSystem.rotation.y = -elapsedTime * 0.06;
+      particleSystem.rotation.z = Math.sin(elapsedTime * 0.2) * 0.08;
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
@@ -141,8 +220,13 @@ export const Hero3DCanvas: React.FC = () => {
       if (container.contains(renderer.domElement)) {
         container.removeChild(renderer.domElement);
       }
-      geometry.dispose();
-      material.dispose();
+      coreGeometry.dispose();
+      coreMaterial.dispose();
+      ring1Geo.dispose();
+      ring2Geo.dispose();
+      ring3Geo.dispose();
+      particlesGeometry.dispose();
+      particlesMaterial.dispose();
       renderer.dispose();
     };
   }, []);
@@ -155,20 +239,20 @@ export const Hero3DCanvas: React.FC = () => {
         style={{
           position: 'absolute',
           top: 0,
-          right: '-5%',
-          width: '65%',
+          right: '-4%',
+          width: '62%',
           height: '100%',
           pointerEvents: 'none',
-          zIndex: 0,
-          opacity: 0.85,
+          zIndex: 2,
+          opacity: 0.95,
         }}
       />
       <style>{`
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .hero-3d-canvas-wrapper {
+            opacity: 0.35 !important;
             width: 100% !important;
             right: 0 !important;
-            opacity: 0.35 !important;
           }
         }
       `}</style>

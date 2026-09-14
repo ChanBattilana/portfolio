@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ExternalLink, ShoppingBag, Trophy, ArrowUpRight } from 'lucide-react';
+import { ExternalLink, ShoppingBag, Trophy, ArrowUpRight, Globe, Lock } from 'lucide-react';
 
 interface Project {
   id: string;
@@ -13,7 +13,7 @@ interface Project {
   icon: React.ReactNode;
   metrics: { label: string; value: string }[];
   accentColor: string;
-  previewType: 'dedicar' | 'champa';
+  previewImage: string;
 }
 
 export const ProjectsSection: React.FC = () => {
@@ -24,39 +24,39 @@ export const ProjectsSection: React.FC = () => {
       id: 'dedicar',
       number: '01',
       title: 'Dedicar',
-      subtitle: 'Catálogo digital, pedidos y logística',
+      subtitle: 'Regalos corporativos & Catálogo digital B2B',
       description:
-        'Plataforma web para negocios que permite publicar productos en un catálogo digital interactivo, recibir pedidos de clientes y coordinar envíos de forma rápida y sencilla.',
-      tags: ['Web', 'Tienda Online', 'Catálogo', 'Gestión de ventas'],
-      url: 'https://dedicar.app',
-      displayUrl: 'dedicar.app',
+        'Plataforma comercial y catálogo digital interactivo para Dedicar, empresa líder en regalos empresariales y productos personalizados importados en Argentina. Experiencia de compra B2B ágil y cotizaciones inmediatas.',
+      tags: ['E-Commerce B2B', 'Catálogo Digital', 'Grabado Láser', 'Logística'],
+      url: 'https://dedicar-arg.com',
+      displayUrl: 'dedicar-arg.com',
       icon: <ShoppingBag size={22} color="#ffffff" />,
       metrics: [
-        { label: 'VELOCIDAD', value: 'Instantánea' },
-        { label: 'PRODUCTOS', value: 'Más de 10.000' },
-        { label: 'EFICIENCIA', value: '+45% ventas' },
+        { label: 'CATÁLOGO', value: 'Importados & Stock' },
+        { label: 'PERSONALIZACIÓN', value: 'Láser & Serigrafía' },
+        { label: 'COTIZACIÓN', value: 'B2B Inmediata' },
       ],
       accentColor: '#ffffff',
-      previewType: 'dedicar',
+      previewImage: '/previews/dedicar.png',
     },
     {
       id: 'champagnat',
       number: '02',
       title: 'Champagnat Resultados',
-      subtitle: 'Marcadores y posiciones en vivo para Rugby URBA',
+      subtitle: 'Marcadores, posiciones y resultados en vivo para Rugby URBA',
       description:
-        'Aplicación web que transmite resultados en directo, posiciones actualizadas automáticamente y estadísticas de partidos para seguir el torneo URBA Top 14.',
-      tags: ['Web', 'En Vivo', 'Deportes', 'Estadísticas'],
-      url: 'https://champagnat-resultados.urba.ar',
-      displayUrl: 'champagnat-resultados.urba.ar',
+        'Plataforma web en tiempo real para Club Champagnat Rugby. Marcadores en directo de Plantel Superior y Juveniles, fixtures, tablas de posiciones y estadísticas del torneo URBA Top 14.',
+      tags: ['En Vivo', 'Rugby URBA', 'Top 14', 'PWA Realtime'],
+      url: 'https://champa-resultados.pages.dev',
+      displayUrl: 'champa-resultados.pages.dev',
       icon: <Trophy size={22} color="#ffffff" />,
       metrics: [
         { label: 'ACTUALIZACIÓN', value: 'En vivo al instante' },
-        { label: 'PLATAFORMA', value: 'Web & Celular' },
-        { label: 'DISPONIBILIDAD', value: '99.9% online' },
+        { label: 'CATEGORÍAS', value: 'Plantel Superior & Juv.' },
+        { label: 'DISPONIBILIDAD', value: '99.9% Online' },
       ],
       accentColor: '#ffffff',
-      previewType: 'champa',
+      previewImage: '/previews/champa.png',
     },
   ];
 
@@ -107,7 +107,7 @@ export const ProjectsSection: React.FC = () => {
                 color: '#d4d4d8',
               }}
             >
-              ( Casos de éxito reales )
+              ( Casos de éxito en producción )
             </span>
           </div>
         </div>
@@ -116,33 +116,33 @@ export const ProjectsSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '2rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '2.5rem',
           }}
         >
           {projects.map((project) => (
             <div
               key={project.id}
               className="glass-card project-card-item"
-              onClick={() => setActiveModal(project)}
               style={{
-                padding: '2rem',
+                padding: '1.75rem',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                cursor: 'pointer',
                 border: '1px solid rgba(255, 255, 255, 0.2)',
-                backgroundColor: 'rgba(255, 255, 255, 0.045)',
+                backgroundColor: 'rgba(255, 255, 255, 0.04)',
+                borderRadius: '16px',
+                transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
               }}
             >
-              {/* Card Top Info */}
               <div>
+                {/* Card Header */}
                 <div
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1.25rem',
                   }}
                 >
                   <div
@@ -154,8 +154,8 @@ export const ProjectsSection: React.FC = () => {
                   >
                     <div
                       style={{
-                        width: 44,
-                        height: 44,
+                        width: 42,
+                        height: 42,
                         borderRadius: 12,
                         backgroundColor: 'rgba(255, 255, 255, 0.1)',
                         border: '1px solid rgba(255, 255, 255, 0.25)',
@@ -172,8 +172,9 @@ export const ProjectsSection: React.FC = () => {
                       <span
                         style={{
                           fontFamily: 'DM Sans, sans-serif',
-                          fontSize: '0.75rem',
-                          color: '#d4d4d8',
+                          fontSize: '0.72rem',
+                          color: '#a1a1aa',
+                          letterSpacing: '0.5px',
                         }}
                       >
                         N.{project.number}
@@ -182,7 +183,7 @@ export const ProjectsSection: React.FC = () => {
                         style={{
                           fontFamily: 'Urbanist, Outfit, sans-serif',
                           fontWeight: 800,
-                          fontSize: '1.55rem',
+                          fontSize: '1.5rem',
                           color: '#ffffff',
                           margin: 0,
                           lineHeight: 1.1,
@@ -198,13 +199,12 @@ export const ProjectsSection: React.FC = () => {
                     href={project.url}
                     target="_blank"
                     rel="noreferrer"
-                    onClick={(e) => e.stopPropagation()}
                     style={{
-                      width: 40,
-                      height: 40,
+                      width: 38,
+                      height: 38,
                       borderRadius: '50%',
-                      backgroundColor: 'rgba(255, 255, 255, 0.06)',
-                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -213,13 +213,14 @@ export const ProjectsSection: React.FC = () => {
                       transition: 'all 0.25s ease',
                       flexShrink: 0,
                     }}
+                    title={`Abrir ${project.displayUrl}`}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.backgroundColor = '#ffffff';
                       e.currentTarget.style.color = '#000000';
                       e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.4)';
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
+                      e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
                       e.currentTarget.style.color = '#ffffff';
                       e.currentTarget.style.boxShadow = 'none';
                     }}
@@ -229,14 +230,14 @@ export const ProjectsSection: React.FC = () => {
                 </div>
 
                 {/* Subtitle & Description */}
-                <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ marginBottom: '1.25rem' }}>
                   <div
                     style={{
                       fontFamily: 'DM Sans, sans-serif',
                       fontSize: '0.82rem',
                       color: '#ffffff',
                       fontWeight: 600,
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.4rem',
                     }}
                   >
                     ( {project.subtitle} )
@@ -244,9 +245,9 @@ export const ProjectsSection: React.FC = () => {
                   <p
                     style={{
                       fontFamily: 'Inter, sans-serif',
-                      fontSize: '0.92rem',
+                      fontSize: '0.9rem',
                       color: '#a1a1aa',
-                      lineHeight: 1.6,
+                      lineHeight: 1.55,
                       margin: 0,
                     }}
                   >
@@ -254,72 +255,149 @@ export const ProjectsSection: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Simulated UI Glass Mockup Card Preview Graphic */}
-                <div
+                {/* Real Browser Index Preview Window ("Pantallita del index") */}
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="browser-preview-frame"
                   style={{
+                    display: 'block',
+                    textDecoration: 'none',
                     borderRadius: 12,
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                    backgroundColor: 'rgba(10, 10, 12, 0.9)',
-                    padding: '1rem',
+                    border: '1px solid rgba(255, 255, 255, 0.18)',
+                    backgroundColor: '#0c0c0e',
+                    overflow: 'hidden',
                     marginBottom: '1.5rem',
                     position: 'relative',
-                    overflow: 'hidden',
+                    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.65)',
+                    transition: 'border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.45)';
+                    e.currentTarget.style.boxShadow = '0 16px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(255, 255, 255, 0.12)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.18)';
+                    e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.65)';
                   }}
                 >
+                  {/* Browser Chrome Bar */}
                   <div
                     style={{
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
-                      borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-                      paddingBottom: '8px',
-                      marginBottom: '12px',
+                      padding: '8px 12px',
+                      backgroundColor: 'rgba(24, 24, 27, 0.95)',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
                     }}
                   >
-                    <div style={{ display: 'flex', gap: '6px' }}>
-                      <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffffff', opacity: 0.3 }} />
-                      <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffffff', opacity: 0.5 }} />
-                      <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#ffffff', opacity: 0.8 }} />
+                    {/* Traffic Light Dots */}
+                    <div style={{ display: 'flex', gap: '6px', alignItems: 'center', width: '50px' }}>
+                      <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ff5f56', opacity: 0.9 }} />
+                      <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ffbd2e', opacity: 0.9 }} />
+                      <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#27c93f', opacity: 0.9 }} />
                     </div>
-                    <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '10px', color: '#ffffff', letterSpacing: '0.5px' }}>
-                      {project.displayUrl}
-                    </span>
+
+                    {/* Address Bar Pill */}
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                        border: '1px solid rgba(255, 255, 255, 0.12)',
+                        padding: '3px 12px',
+                        borderRadius: '100px',
+                        fontSize: '11px',
+                        fontFamily: 'DM Sans, sans-serif',
+                        color: '#ffffff',
+                      }}
+                    >
+                      <Lock size={10} color="#22c55e" />
+                      <span style={{ fontWeight: 500 }}>{project.displayUrl}</span>
+                    </div>
+
+                    {/* Live indicator badge */}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '5px', width: '50px', justifyContent: 'flex-end' }}>
+                      <span
+                        style={{
+                          width: 6,
+                          height: 6,
+                          borderRadius: '50%',
+                          backgroundColor: '#22c55e',
+                          boxShadow: '0 0 8px #22c55e',
+                        }}
+                      />
+                      <span style={{ fontSize: '10px', color: '#a1a1aa', fontFamily: 'DM Sans, sans-serif' }}>
+                        Live
+                      </span>
+                    </div>
                   </div>
 
-                  {project.previewType === 'dedicar' ? (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#ffffff' }}>
-                        <span style={{ fontWeight: 500 }}>Catálogo Digital #4092</span>
-                        <span style={{ color: '#ffffff', opacity: 0.9 }}>● Sincronizado</span>
-                      </div>
-                      <div style={{ height: 6, background: 'rgba(255,255,255,0.08)', borderRadius: 3 }}>
-                        <div style={{ width: '80%', height: '100%', background: '#ffffff', borderRadius: 3, boxShadow: '0 0 10px rgba(255,255,255,0.5)' }} />
-                      </div>
-                      <div style={{ display: 'flex', gap: '6px', marginTop: '4px', flexWrap: 'wrap' }}>
-                        <span style={{ fontSize: '10px', background: 'rgba(255,255,255,0.08)', color: '#ffffff', padding: '2px 8px', borderRadius: 4 }}>
-                          Logística 24/7
-                        </span>
-                        <span style={{ fontSize: '10px', background: 'rgba(255,255,255,0.08)', color: '#ffffff', padding: '2px 8px', borderRadius: 4 }}>
-                          Checkout WhatsApp / Card
-                        </span>
-                      </div>
+                  {/* Browser Screen Content Preview */}
+                  <div
+                    style={{
+                      position: 'relative',
+                      width: '100%',
+                      aspectRatio: '16 / 9.5',
+                      overflow: 'hidden',
+                      backgroundColor: '#050505',
+                    }}
+                  >
+                    <img
+                      src={project.previewImage}
+                      alt={`Index de ${project.title}`}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        objectPosition: 'top center',
+                        display: 'block',
+                        transition: 'transform 0.4s ease',
+                      }}
+                      className="preview-screen-img"
+                    />
+
+                    {/* Hover Floating Action Pill */}
+                    <div
+                      className="preview-hover-overlay"
+                      style={{
+                        position: 'absolute',
+                        inset: 0,
+                        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        opacity: 0,
+                        transition: 'opacity 0.25s ease',
+                        backdropFilter: 'blur(3px)',
+                      }}
+                    >
+                      <span
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          backgroundColor: '#ffffff',
+                          color: '#000000',
+                          padding: '8px 18px',
+                          borderRadius: '100px',
+                          fontWeight: 700,
+                          fontSize: '0.85rem',
+                          fontFamily: 'DM Sans, sans-serif',
+                          boxShadow: '0 4px 20px rgba(255, 255, 255, 0.4)',
+                        }}
+                      >
+                        <Globe size={15} />
+                        Visitar index en vivo
+                        <ArrowUpRight size={15} />
+                      </span>
                     </div>
-                  ) : (
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                        <span style={{ fontSize: '11px', color: '#ffffff', fontWeight: 600 }}>URBA TOP 14 - FECHA 08</span>
-                        <span style={{ fontSize: '10px', background: '#ffffff', color: '#000000', padding: '2px 6px', borderRadius: 4, fontWeight: 700 }}>
-                          LIVE 80'
-                        </span>
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'rgba(255,255,255,0.04)', padding: '8px 12px', borderRadius: 6, border: '1px solid rgba(255,255,255,0.08)' }}>
-                        <span style={{ fontSize: '11px', color: '#ffffff', fontWeight: 600 }}>Champagnat</span>
-                        <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '13px', fontWeight: 700, color: '#ffffff' }}>24 — 19</span>
-                        <span style={{ fontSize: '11px', color: '#a1a1aa' }}>CUBA</span>
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  </div>
+                </a>
 
                 {/* Metrics row */}
                 <div
@@ -328,17 +406,32 @@ export const ProjectsSection: React.FC = () => {
                     display: 'grid',
                     gridTemplateColumns: 'repeat(auto-fit, minmax(90px, 1fr))',
                     gap: '12px',
-                    marginBottom: '1.5rem',
+                    marginBottom: '1.25rem',
                     borderTop: '1px dashed rgba(255, 255, 255, 0.12)',
                     paddingTop: '1rem',
                   }}
                 >
                   {project.metrics.map((m, idx) => (
                     <div key={idx}>
-                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '9px', color: '#a1a1aa', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                      <div
+                        style={{
+                          fontFamily: 'DM Sans, sans-serif',
+                          fontSize: '9px',
+                          color: '#a1a1aa',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.5px',
+                        }}
+                      >
                         {m.label}
                       </div>
-                      <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.85rem', fontWeight: 700, color: '#ffffff' }}>
+                      <div
+                        style={{
+                          fontFamily: 'DM Sans, sans-serif',
+                          fontSize: '0.85rem',
+                          fontWeight: 700,
+                          color: '#ffffff',
+                        }}
+                      >
                         {m.value}
                       </div>
                     </div>
@@ -359,7 +452,7 @@ export const ProjectsSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Project Modal Preview */}
+      {/* Project Modal Preview if triggered */}
       {activeModal && (
         <div
           style={{
@@ -378,7 +471,7 @@ export const ProjectsSection: React.FC = () => {
           <div
             className="glass-card project-modal-content"
             style={{
-              maxWidth: '640px',
+              maxWidth: '680px',
               width: '100%',
               maxHeight: '90vh',
               overflowY: 'auto',
@@ -388,10 +481,25 @@ export const ProjectsSection: React.FC = () => {
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '1.5rem',
+              }}
+            >
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                 {activeModal.icon}
-                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', fontSize: '1.6rem', color: '#ffffff', margin: 0 }}>
+                <h3
+                  style={{
+                    fontFamily: 'Urbanist, sans-serif',
+                    fontWeight: 800,
+                    fontSize: '1.6rem',
+                    color: '#ffffff',
+                    margin: 0,
+                  }}
+                >
                   {activeModal.title}
                 </h3>
               </div>
@@ -412,7 +520,22 @@ export const ProjectsSection: React.FC = () => {
               </button>
             </div>
 
-            <p style={{ color: '#a1a1aa', lineHeight: 1.6, marginBottom: '2rem' }}>
+            <div
+              style={{
+                borderRadius: '10px',
+                overflow: 'hidden',
+                border: '1px solid rgba(255,255,255,0.2)',
+                marginBottom: '1.5rem',
+              }}
+            >
+              <img
+                src={activeModal.previewImage}
+                alt={activeModal.title}
+                style={{ width: '100%', display: 'block' }}
+              />
+            </div>
+
+            <p style={{ color: '#d4d4d8', lineHeight: 1.6, marginBottom: '2rem' }}>
               {activeModal.description}
             </p>
 
@@ -424,7 +547,7 @@ export const ProjectsSection: React.FC = () => {
                 className="btn-primary"
                 style={{ textDecoration: 'none', width: '100%', justifyContent: 'center' }}
               >
-                <span>Visitar sitio web oficial</span>
+                <span>Visitar {activeModal.displayUrl}</span>
                 <ExternalLink size={16} />
               </a>
             </div>
@@ -433,6 +556,12 @@ export const ProjectsSection: React.FC = () => {
       )}
 
       <style>{`
+        .browser-preview-frame:hover .preview-screen-img {
+          transform: scale(1.03);
+        }
+        .browser-preview-frame:hover .preview-hover-overlay {
+          opacity: 1 !important;
+        }
         @media (max-width: 768px) {
           .projects-section-container {
             padding: 3.5rem 0 !important;
@@ -448,4 +577,3 @@ export const ProjectsSection: React.FC = () => {
     </section>
   );
 };
-
