@@ -3,25 +3,25 @@
   --bg-dark: #000000;
   --bg-darker: #050505;
   --bg-surface: #0a0a0c;
-  --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-card-hover: rgba(255, 255, 255, 0.09);
   
   --accent-primary: #ffffff;
-  --accent-glow: rgba(255, 255, 255, 0.35);
+  --accent-glow: rgba(255, 255, 255, 0.45);
   --accent-cyan: #ffffff; /* Alias to ensure complete monochrome consistency */
-  --accent-cyan-glow: rgba(255, 255, 255, 0.25);
+  --accent-cyan-glow: rgba(255, 255, 255, 0.35);
   --accent-teal: #ffffff;
   --accent-emerald: #ffffff;
   
   --text-main: #ffffff;
-  --text-muted: #a1a1aa;
-  --text-dim: #71717a;
+  --text-muted: #d4d4d8;
+  --text-dim: #a1a1aa;
   
-  --border-subtle: rgba(255, 255, 255, 0.12);
-  --border-cyan-glow: rgba(255, 255, 255, 0.6);
-  --border-glow: rgba(255, 255, 255, 0.6);
+  --border-subtle: rgba(255, 255, 255, 0.18);
+  --border-cyan-glow: rgba(255, 255, 255, 0.8);
+  --border-glow: rgba(255, 255, 255, 0.8);
   
-  --font-display: 'Sora', sans-serif;
+  --font-display: 'Urbanist', 'Outfit', sans-serif;
   --font-sans: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'DM Sans', sans-serif;
 }
@@ -43,13 +43,13 @@ html {
 
 body {
   overflow-x: hidden;
-  /* Luminous multi-spot ambient white gradients on pure black */
+  /* Luminous multi-spot ambient white radiance on pure obsidian black */
   background-color: #000000;
   background-image: 
-    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 45%, transparent 70%),
-    radial-gradient(circle at 80% 35%, rgba(255, 255, 255, 0.07) 0%, transparent 45%),
-    radial-gradient(circle at 15% 65%, rgba(255, 255, 255, 0.06) 0%, transparent 45%),
-    radial-gradient(ellipse 70% 40% at 50% 100%, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse 95% 65% at 50% -8%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0.09) 42%, transparent 72%),
+    radial-gradient(circle at 82% 35%, rgba(255, 255, 255, 0.14) 0%, transparent 48%),
+    radial-gradient(circle at 18% 65%, rgba(255, 255, 255, 0.12) 0%, transparent 48%),
+    radial-gradient(ellipse 75% 45% at 50% 100%, rgba(255, 255, 255, 0.14) 0%, transparent 60%);
   min-height: 100vh;
   position: relative;
 }
@@ -65,7 +65,7 @@ a, button, input, textarea, select {
   inset: 0;
   pointer-events: none;
   z-index: 2;
-  background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.75) 100%);
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.65) 100%);
 }
 
 .grid-lines-bg {
@@ -74,8 +74,8 @@ a, button, input, textarea, select {
   pointer-events: none;
   z-index: 1;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
   background-size: calc(100% / 12) 100px;
   mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, #000 50%, transparent 95%);
   -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 40%, #000 50%, transparent 95%);
@@ -97,14 +97,14 @@ a, button, input, textarea, select {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
   pointer-events: none;
 }
 
 .glass-card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 16px 45px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.8), 0 0 35px rgba(255, 255, 255, 0.16);
   transform: translateY(-4px);
 }
 

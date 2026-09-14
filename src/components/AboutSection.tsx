@@ -18,13 +18,13 @@ export const AboutSection: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: '20%',
-          right: '5%',
-          width: '500px',
-          height: '500px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 65%)',
+          top: '15%',
+          right: '0%',
+          width: '550px',
+          height: '550px',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%)',
           pointerEvents: 'none',
-          filter: 'blur(50px)',
+          filter: 'blur(60px)',
           zIndex: 0,
         }}
       />
@@ -37,11 +37,11 @@ export const AboutSection: React.FC = () => {
           </div>
           <h2
             style={{
-              fontFamily: 'Plus Jakarta Sans, sans-serif',
+              fontFamily: 'Urbanist, Outfit, sans-serif',
               fontWeight: 800,
-              fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
+              fontSize: 'clamp(1.8rem, 4.2vw, 3.5rem)',
               color: '#ffffff',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
               margin: 0,
             }}
           >
@@ -70,13 +70,13 @@ export const AboutSection: React.FC = () => {
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
                 fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                color: '#f4f4f5',
+                color: '#ffffff',
                 lineHeight: 1.7,
                 marginBottom: '1.5rem',
               }}
             >
-              Soy desarrollador web y especialista en negocios digitales graduado de la{' '}
-              <strong style={{ color: '#ffffff', fontWeight: 700, borderBottom: '1px solid rgba(255, 255, 255, 0.5)' }}>
+              Soy desarrollador web y estudiante de Negocios Digitales en la{' '}
+              <strong style={{ color: '#ffffff', fontWeight: 700, borderBottom: '1px solid rgba(255, 255, 255, 0.6)' }}>
                 UCA (Universidad Católica Argentina, Buenos Aires)
               </strong>
               . Mi objetivo es unir la programación moderna con la estrategia para crear sitios web y sistemas digitales exitosos, rápidos y sencillos de usar.
@@ -87,7 +87,7 @@ export const AboutSection: React.FC = () => {
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
                 fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-                color: '#a1a1aa',
+                color: '#d4d4d8',
                 lineHeight: 1.7,
                 marginBottom: '2rem',
               }}
@@ -108,16 +108,16 @@ export const AboutSection: React.FC = () => {
                 style={{
                   padding: '1.5rem',
                   borderRadius: 14,
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
                   transition: 'border-color 0.25s, transform 0.25s',
                 }}
               >
                 <Code size={22} color="#ffffff" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#ffffff', fontSize: '1.05rem', margin: '0 0 8px 0', fontWeight: 700 }}>
+                <h4 style={{ fontFamily: 'Urbanist, Outfit, sans-serif', color: '#ffffff', fontSize: '1.1rem', margin: '0 0 8px 0', fontWeight: 700 }}>
                   Desarrollo Web Completo
                 </h4>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#a1a1aa', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#d4d4d8', margin: 0, lineHeight: 1.5 }}>
                   Creación de páginas web y aplicaciones modernas que cargan al instante y funcionan de forma impecable en celulares y computadoras.
                 </p>
               </div>
@@ -126,16 +126,16 @@ export const AboutSection: React.FC = () => {
                 style={{
                   padding: '1.5rem',
                   borderRadius: 14,
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
                   transition: 'border-color 0.25s, transform 0.25s',
                 }}
               >
                 <Briefcase size={22} color="#ffffff" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#ffffff', fontSize: '1.05rem', margin: '0 0 8px 0', fontWeight: 700 }}>
+                <h4 style={{ fontFamily: 'Urbanist, Outfit, sans-serif', color: '#ffffff', fontSize: '1.1rem', margin: '0 0 8px 0', fontWeight: 700 }}>
                   Estrategia de Negocios
                 </h4>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#a1a1aa', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#d4d4d8', margin: 0, lineHeight: 1.5 }}>
                   Planificación digital, optimización de tiendas online y mejoras en los procesos de atención y conversión de clientes.
                 </p>
               </div>
@@ -156,8 +156,8 @@ export const AboutSection: React.FC = () => {
                 backgroundColor: '#ffffff',
                 color: '#09090b',
                 borderRadius: '16px',
-                border: '1px solid rgba(255, 255, 255, 0.9)',
-                boxShadow: '0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 255, 255, 0.2)',
+                border: '1px solid rgba(255, 255, 255, 0.95)',
+                boxShadow: '0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 45px rgba(255, 255, 255, 0.25)',
                 position: 'relative',
               }}
             >
@@ -177,10 +177,10 @@ export const AboutSection: React.FC = () => {
                   <GraduationCap size={26} color="#ffffff" />
                 </div>
                 <div>
-                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#52525b', fontWeight: 700, letterSpacing: '0.5px' }}>
-                    FORMACIÓN PROFESIONAL
+                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#52525b', fontWeight: 700, letterSpacing: '0.6px' }}>
+                    ESTUDIANTE UNIVERSITARIO
                   </div>
-                  <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#09090b', fontSize: '1.35rem', fontWeight: 800, margin: 0 }}>
+                  <h3 style={{ fontFamily: 'Urbanist, Outfit, sans-serif', color: '#09090b', fontSize: '1.4rem', fontWeight: 800, margin: 0 }}>
                     UCA Buenos Aires
                   </h3>
                 </div>
@@ -195,7 +195,7 @@ export const AboutSection: React.FC = () => {
                   <div style={{ color: '#09090b', fontWeight: 700, fontSize: '1.05rem', marginTop: '4px' }}>
                     Universidad Católica Argentina (UCA)
                   </div>
-                  <span style={{ fontSize: '0.85rem', color: '#52525b' }}>Buenos Aires, Argentina</span>
+                  <span style={{ fontSize: '0.85rem', color: '#52525b' }}>Buenos Aires, Argentina • Carrera en curso</span>
                 </div>
 
                 <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '1rem' }}>
@@ -205,7 +205,7 @@ export const AboutSection: React.FC = () => {
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '8px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#18181b', fontWeight: 600 }}>
                       <CheckCircle2 size={16} color="#000000" />
-                      <span>Gestión de Negocios Digitales</span>
+                      <span>Gestión de Negocios Digitales (En curso)</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#18181b', fontWeight: 600 }}>
                       <CheckCircle2 size={16} color="#000000" />

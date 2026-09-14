@@ -58,17 +58,17 @@ export const ContactSection: React.FC = () => {
           </div>
           <h2
             style={{
-              fontFamily: 'Plus Jakarta Sans, sans-serif',
+              fontFamily: 'Urbanist, Outfit, sans-serif',
               fontWeight: 800,
-              fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
+              fontSize: 'clamp(1.8rem, 4.2vw, 3.5rem)',
               color: '#ffffff',
-              letterSpacing: '-0.03em',
+              letterSpacing: '-0.02em',
               margin: 0,
             }}
           >
             Iniciemos una conversación
           </h2>
-          <p style={{ color: '#a1a1aa', fontSize: '1rem', marginTop: '0.75rem', maxWidth: '600px' }}>
+          <p style={{ color: '#d4d4d8', fontSize: '1rem', marginTop: '0.75rem', maxWidth: '600px' }}>
             ¿Tienes una idea, consulta o proyecto en mente? Escríbeme directamente por cualquier medio.
           </p>
         </div>

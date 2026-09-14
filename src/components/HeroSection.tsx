@@ -25,13 +25,13 @@ export const HeroSection: React.FC = () => {
       <div
         style={{
           position: 'absolute',
-          top: '5%',
-          left: '0%',
-          width: '550px',
-          height: '550px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 75%)',
+          top: '2%',
+          left: '-2%',
+          width: '650px',
+          height: '650px',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.06) 45%, transparent 75%)',
           pointerEvents: 'none',
-          filter: 'blur(60px)',
+          filter: 'blur(70px)',
           zIndex: 1,
         }}
       />
@@ -47,9 +47,9 @@ export const HeroSection: React.FC = () => {
             alignItems: 'center',
             gap: '8px',
             flexWrap: 'wrap',
-            background: 'rgba(255, 255, 255, 0.08)',
-            border: '1px solid rgba(255, 255, 255, 0.25)',
-            padding: '6px 14px',
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            padding: '7px 16px',
             borderRadius: '100px',
             marginBottom: '1.75rem',
             maxWidth: '100%',
@@ -60,20 +60,20 @@ export const HeroSection: React.FC = () => {
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
-              fontWeight: 600,
+              fontWeight: 700,
               color: '#ffffff',
-              letterSpacing: '0.5px',
+              letterSpacing: '0.8px',
               textTransform: 'uppercase',
             }}
           >
             DESARROLLO WEB & NEGOCIOS DIGITALES
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.25)' }} className="hide-mobile">|</span>
+          <span style={{ color: 'rgba(255,255,255,0.3)' }} className="hide-mobile">|</span>
           <span
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
-              color: '#a1a1aa',
+              color: '#d4d4d8',
             }}
             className="hide-mobile"
           >
@@ -81,20 +81,20 @@ export const HeroSection: React.FC = () => {
           </span>
         </div>
 
-        {/* Hero Name Title */}
-        <div style={{ maxWidth: '950px' }}>
+        {/* Hero Name Title with Modern Subtle Double-TT Harmony (Urbanist) */}
+        <div style={{ maxWidth: '850px' }}>
           <h1
             style={{
-              fontFamily: 'Plus Jakarta Sans, sans-serif',
+              fontFamily: 'Urbanist, Outfit, sans-serif',
               fontWeight: 800,
-              fontSize: 'clamp(2.4rem, 9.5vw, 9.5rem)',
-              lineHeight: 0.98,
-              letterSpacing: '-0.03em',
+              fontSize: 'clamp(2.1rem, 5.4vw, 4.5rem)',
+              lineHeight: 1.05,
+              letterSpacing: '-0.015em',
               color: '#ffffff',
               margin: '0 0 1.5rem 0',
               textTransform: 'uppercase',
               userSelect: 'none',
-              textShadow: '0 10px 40px rgba(0, 0, 0, 0.9)',
+              textShadow: '0 10px 40px rgba(0, 0, 0, 0.95)',
               wordBreak: 'break-word',
             }}
           >
@@ -108,16 +108,16 @@ export const HeroSection: React.FC = () => {
             style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
-              fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
-              color: '#f4f4f5',
-              maxWidth: '720px',
-              lineHeight: 1.5,
+              fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+              color: '#ffffff',
+              maxWidth: '680px',
+              lineHeight: 1.55,
               marginBottom: '2.25rem',
             }}
           >
             Desarrollador Web & Especialista en Negocios Digitales.
             <br />
-            <span style={{ fontSize: '0.95em', color: '#a1a1aa', fontWeight: 300 }}>
+            <span style={{ fontSize: '0.95em', color: '#d4d4d8', fontWeight: 300 }}>
               Creo sitios web modernos, sistemas y soluciones digitales fáciles de usar para potenciar empresas y proyectos.
             </span>
           </p>
@@ -140,26 +140,26 @@ export const HeroSection: React.FC = () => {
                 flexWrap: 'wrap',
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: '0.8rem',
-                color: '#a1a1aa',
+                color: '#d4d4d8',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span className="status-dot" />
-                <span style={{ color: '#ffffff', fontWeight: 500 }}>Disponible para nuevos proyectos</span>
+                <span style={{ color: '#ffffff', fontWeight: 600 }}>Disponible para nuevos proyectos</span>
               </div>
-              <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+              <span style={{ color: 'rgba(255,255,255,0.25)' }}>•</span>
               <span
                 style={{
                   color: '#ffffff',
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  padding: '3px 10px',
+                  background: 'rgba(255, 255, 255, 0.1)',
+                  padding: '4px 12px',
                   borderRadius: '100px',
-                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  border: '1px solid rgba(255, 255, 255, 0.25)',
                   fontSize: '0.75rem',
                   fontWeight: 600,
                 }}
               >
-                Graduado en UCA
+                Estudiante en UCA
               </span>
             </div>
           </div>

@@ -89,11 +89,11 @@ export const ProjectsSection: React.FC = () => {
           >
             <h2
               style={{
-                fontFamily: 'Plus Jakarta Sans, sans-serif',
+                fontFamily: 'Urbanist, Outfit, sans-serif',
                 fontWeight: 800,
-                fontSize: 'clamp(1.8rem, 4.5vw, 3.8rem)',
+                fontSize: 'clamp(1.8rem, 4.2vw, 3.5rem)',
                 color: '#ffffff',
-                letterSpacing: '-0.03em',
+                letterSpacing: '-0.02em',
                 margin: 0,
               }}
             >
@@ -104,7 +104,7 @@ export const ProjectsSection: React.FC = () => {
               style={{
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: '0.85rem',
-                color: '#a1a1aa',
+                color: '#d4d4d8',
               }}
             >
               ( Casos de éxito reales )
@@ -131,6 +131,8 @@ export const ProjectsSection: React.FC = () => {
                 flexDirection: 'column',
                 justifyContent: 'space-between',
                 cursor: 'pointer',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                backgroundColor: 'rgba(255, 255, 255, 0.045)',
               }}
             >
               {/* Card Top Info */}
@@ -155,8 +157,8 @@ export const ProjectsSection: React.FC = () => {
                         width: 44,
                         height: 44,
                         borderRadius: 12,
-                        backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.25)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -171,19 +173,20 @@ export const ProjectsSection: React.FC = () => {
                         style={{
                           fontFamily: 'DM Sans, sans-serif',
                           fontSize: '0.75rem',
-                          color: '#a1a1aa',
+                          color: '#d4d4d8',
                         }}
                       >
                         N.{project.number}
                       </span>
                       <h3
                         style={{
-                          fontFamily: 'Plus Jakarta Sans, sans-serif',
+                          fontFamily: 'Urbanist, Outfit, sans-serif',
                           fontWeight: 800,
-                          fontSize: '1.5rem',
+                          fontSize: '1.55rem',
                           color: '#ffffff',
                           margin: 0,
                           lineHeight: 1.1,
+                          letterSpacing: '-0.01em',
                         }}
                       >
                         {project.title}
