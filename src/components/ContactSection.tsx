@@ -16,9 +16,9 @@ export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
   const email = 'channbattilana.13@gmail.com';
-  const linkedinUrl = 'https://linkedin.com/in/santos-battilana';
-  const whatsappNumber = '+54 9 11 3456-7890';
-  const whatsappUrl = 'https://wa.me/5491134567890?text=Hola%20Santos,%20vi%20tu%20portfolio...';
+  const linkedinUrl = 'https://www.linkedin.com/in/santos-battilana-6a4393234/';
+  const whatsappNumber = '+54 9 11 3624-9686';
+  const whatsappUrl = 'https://wa.me/5491136249686?text=Hola%20Santos,%20vi%20tu%20portfolio...';
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -203,7 +203,7 @@ export const ContactSection: React.FC = () => {
                         color: '#ffffff',
                       }}
                     >
-                      linkedin.com/in/santos-battilana
+                      linkedin.com/in/santos-battilana-6a4393234
                     </div>
                   </div>
                 </div>
