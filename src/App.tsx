@@ -10,9 +10,6 @@ import { Footer } from './components/Footer';
 export function App() {
   return (
     <>
-      {/* Subtle Architectural Grid Lines Overlay */}
-      <div className="grid-lines-bg" />
-
       {/* Atmospheric Vignette Backdrop */}
       <div className="vignette-overlay" />
 

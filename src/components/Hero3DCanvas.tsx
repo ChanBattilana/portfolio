@@ -37,27 +37,16 @@ export const Hero3DCanvas: React.FC = () => {
       color: new THREE.Color('#141416'),
       emissive: new THREE.Color('#0a0a0c'),
       roughness: 0.12,
-      metalness: 0.95,
+      metalness: 0.96,
       clearcoat: 1.0,
-      clearcoatRoughness: 0.06,
+      clearcoatRoughness: 0.05,
       wireframe: false,
       flatShading: false,
       transparent: true,
-      opacity: 0.9,
-    });
-
-    // Wireframe overlay mesh for clean monochrome tech look
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#ffffff'),
-      wireframe: true,
-      transparent: true,
-      opacity: 0.1,
+      opacity: 0.92,
     });
 
     const mesh = new THREE.Mesh(geometry, material);
-    const wireMesh = new THREE.Mesh(geometry, wireframeMaterial);
-    wireMesh.scale.setScalar(1.002);
-    mesh.add(wireMesh);
     scene.add(mesh);
 
     // High-Key Crisp White Studio Lighting
@@ -154,7 +143,6 @@ export const Hero3DCanvas: React.FC = () => {
       }
       geometry.dispose();
       material.dispose();
-      wireframeMaterial.dispose();
       renderer.dispose();
     };
   }, []);
