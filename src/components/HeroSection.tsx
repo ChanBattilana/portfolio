@@ -21,7 +21,22 @@ export const HeroSection: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* 3D Distorted Organic Mesh Blob Floating Canvas Background */}
+      {/* Radiant White Ambient Glow Backdrop */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '5%',
+          left: '0%',
+          width: '550px',
+          height: '550px',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 50%, transparent 75%)',
+          pointerEvents: 'none',
+          filter: 'blur(60px)',
+          zIndex: 1,
+        }}
+      />
+
+      {/* 3D Distorted Liquid Chrome Mesh Blob Floating Canvas Background */}
       <Hero3DCanvas />
 
       <div className="container-12col" style={{ position: 'relative', zIndex: 10, width: '100%' }}>
@@ -32,33 +47,33 @@ export const HeroSection: React.FC = () => {
             alignItems: 'center',
             gap: '8px',
             flexWrap: 'wrap',
-            background: 'rgba(0, 245, 212, 0.06)',
-            border: '1px solid rgba(0, 245, 212, 0.25)',
+            background: 'rgba(255, 255, 255, 0.08)',
+            border: '1px solid rgba(255, 255, 255, 0.25)',
             padding: '6px 14px',
             borderRadius: '100px',
             marginBottom: '1.75rem',
             maxWidth: '100%',
           }}
         >
-          <Terminal size={14} color="#00f5d4" />
+          <Terminal size={14} color="#ffffff" />
           <span
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
               fontWeight: 600,
-              color: '#00f5d4',
+              color: '#ffffff',
               letterSpacing: '0.5px',
               textTransform: 'uppercase',
             }}
           >
             DESARROLLO WEB & NEGOCIOS DIGITALES
           </span>
-          <span style={{ color: 'rgba(255,255,255,0.2)' }} className="hide-mobile">|</span>
+          <span style={{ color: 'rgba(255,255,255,0.25)' }} className="hide-mobile">|</span>
           <span
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.75rem',
-              color: '#8e8e93',
+              color: '#a1a1aa',
             }}
             className="hide-mobile"
           >
@@ -79,7 +94,7 @@ export const HeroSection: React.FC = () => {
               margin: '0 0 1.5rem 0',
               textTransform: 'uppercase',
               userSelect: 'none',
-              textShadow: '0 10px 40px rgba(0, 0, 0, 0.8)',
+              textShadow: '0 10px 40px rgba(0, 0, 0, 0.9)',
               wordBreak: 'break-word',
             }}
           >
@@ -88,13 +103,13 @@ export const HeroSection: React.FC = () => {
             BATTILANA
           </h1>
 
-          {/* Subtitle - Easy to understand for all ages */}
+          {/* Subtitle - High contrast and crystal clarity */}
           <p
             style={{
               fontFamily: 'Inter, sans-serif',
               fontWeight: 400,
               fontSize: 'clamp(1rem, 2.2vw, 1.4rem)',
-              color: '#e0e0e6',
+              color: '#f4f4f5',
               maxWidth: '720px',
               lineHeight: 1.5,
               marginBottom: '2.25rem',
@@ -102,17 +117,16 @@ export const HeroSection: React.FC = () => {
           >
             Desarrollador Web & Especialista en Negocios Digitales.
             <br />
-            <span style={{ fontSize: '0.95em', color: '#a0a0ab', fontWeight: 300 }}>
+            <span style={{ fontSize: '0.95em', color: '#a1a1aa', fontWeight: 300 }}>
               Creo sitios web modernos, sistemas y soluciones digitales fáciles de usar para potenciar empresas y proyectos.
             </span>
           </p>
 
-          {/* Cyan Action Button & Clear Badges */}
+          {/* High-contrast Pure White Pill Button & Status Badges */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', flexWrap: 'wrap' }}>
             <button
               onClick={scrollToProjects}
-              className="btn-cyan"
-              data-cursor="EXPLORAR"
+              className="btn-primary"
             >
               <span>Ver proyectos</span>
               <ArrowDownRight size={18} />
@@ -126,15 +140,27 @@ export const HeroSection: React.FC = () => {
                 flexWrap: 'wrap',
                 fontFamily: 'DM Sans, sans-serif',
                 fontSize: '0.8rem',
-                color: '#8e8e93',
+                color: '#a1a1aa',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <span className="status-dot" />
-                <span style={{ color: '#f5f5f7', fontWeight: 500 }}>Disponible para nuevos proyectos</span>
+                <span style={{ color: '#ffffff', fontWeight: 500 }}>Disponible para nuevos proyectos</span>
               </div>
-              <span style={{ color: 'rgba(255,255,255,0.15)' }}>•</span>
-              <span style={{ color: '#00f5d4' }}>Graduado en UCA</span>
+              <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
+              <span
+                style={{
+                  color: '#ffffff',
+                  background: 'rgba(255, 255, 255, 0.08)',
+                  padding: '3px 10px',
+                  borderRadius: '100px',
+                  border: '1px solid rgba(255, 255, 255, 0.18)',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                }}
+              >
+                Graduado en UCA
+              </span>
             </div>
           </div>
         </div>

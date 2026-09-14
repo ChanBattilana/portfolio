@@ -10,15 +10,30 @@ export const AboutSection: React.FC = () => {
         padding: '5rem 0',
         position: 'relative',
         zIndex: 10,
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-        backgroundColor: 'rgba(5, 7, 10, 0.4)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
       }}
     >
-      <div className="container-12col">
+      {/* Subtle White Ambient Spotlight */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '20%',
+          right: '5%',
+          width: '500px',
+          height: '500px',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 65%)',
+          pointerEvents: 'none',
+          filter: 'blur(50px)',
+          zIndex: 0,
+        }}
+      />
+
+      <div className="container-12col" style={{ position: 'relative', zIndex: 10 }}>
         {/* Section Header */}
         <div style={{ marginBottom: '3rem' }}>
           <div className="mono-label" style={{ marginBottom: '0.75rem' }}>
-            <span style={{ color: '#00f5d4' }}>●</span> SOBRE MÍ
+            <span style={{ color: '#ffffff' }}>●</span> SOBRE MÍ
           </div>
           <h2
             style={{
@@ -55,13 +70,13 @@ export const AboutSection: React.FC = () => {
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
                 fontSize: 'clamp(1rem, 2vw, 1.2rem)',
-                color: '#e0e0e6',
+                color: '#f4f4f5',
                 lineHeight: 1.7,
                 marginBottom: '1.5rem',
               }}
             >
               Soy desarrollador web y especialista en negocios digitales graduado de la{' '}
-              <strong style={{ color: '#00f5d4', fontWeight: 600 }}>
+              <strong style={{ color: '#ffffff', fontWeight: 700, borderBottom: '1px solid rgba(255, 255, 255, 0.5)' }}>
                 UCA (Universidad Católica Argentina, Buenos Aires)
               </strong>
               . Mi objetivo es unir la programación moderna con la estrategia para crear sitios web y sistemas digitales exitosos, rápidos y sencillos de usar.
@@ -72,7 +87,7 @@ export const AboutSection: React.FC = () => {
                 fontFamily: 'Inter, sans-serif',
                 fontWeight: 400,
                 fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)',
-                color: '#a0a0ab',
+                color: '#a1a1aa',
                 lineHeight: 1.7,
                 marginBottom: '2rem',
               }}
@@ -91,41 +106,43 @@ export const AboutSection: React.FC = () => {
             >
               <div
                 style={{
-                  padding: '1.25rem',
-                  borderRadius: 12,
-                  background: 'rgba(255, 255, 255, 0.025)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  padding: '1.5rem',
+                  borderRadius: 14,
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'border-color 0.25s, transform 0.25s',
                 }}
               >
-                <Code size={20} color="#00f5d4" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.05rem', margin: '0 0 8px 0' }}>
+                <Code size={22} color="#ffffff" style={{ marginBottom: '12px' }} />
+                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#ffffff', fontSize: '1.05rem', margin: '0 0 8px 0', fontWeight: 700 }}>
                   Desarrollo Web Completo
                 </h4>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#8e8e93', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#a1a1aa', margin: 0, lineHeight: 1.5 }}>
                   Creación de páginas web y aplicaciones modernas que cargan al instante y funcionan de forma impecable en celulares y computadoras.
                 </p>
               </div>
 
               <div
                 style={{
-                  padding: '1.25rem',
-                  borderRadius: 12,
-                  background: 'rgba(255, 255, 255, 0.025)',
-                  border: '1px solid rgba(255, 255, 255, 0.06)',
+                  padding: '1.5rem',
+                  borderRadius: 14,
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'border-color 0.25s, transform 0.25s',
                 }}
               >
-                <Briefcase size={20} color="#00f2fe" style={{ marginBottom: '12px' }} />
-                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.05rem', margin: '0 0 8px 0' }}>
+                <Briefcase size={22} color="#ffffff" style={{ marginBottom: '12px' }} />
+                <h4 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#ffffff', fontSize: '1.05rem', margin: '0 0 8px 0', fontWeight: 700 }}>
                   Estrategia de Negocios
                 </h4>
-                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#8e8e93', margin: 0, lineHeight: 1.5 }}>
+                <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.88rem', color: '#a1a1aa', margin: 0, lineHeight: 1.5 }}>
                   Planificación digital, optimización de tiendas online y mejoras en los procesos de atención y conversión de clientes.
                 </p>
               </div>
             </div>
           </div>
 
-          {/* Academic & Technical Background Card (5 columns) */}
+          {/* Academic & Technical Background Inverted White Card (5 columns) */}
           <div
             style={{
               gridColumn: 'span 5',
@@ -133,19 +150,37 @@ export const AboutSection: React.FC = () => {
             className="col-mobile-12"
           >
             <div
-              className="glass-card about-uca-card"
+              className="about-uca-card"
               style={{
-                padding: '2rem',
-                border: '1px solid rgba(0, 245, 212, 0.2)',
+                padding: '2.25rem',
+                backgroundColor: '#ffffff',
+                color: '#09090b',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.9)',
+                boxShadow: '0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 255, 255, 0.2)',
+                position: 'relative',
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1.75rem' }}>
-                <GraduationCap size={26} color="#00f5d4" />
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '1.75rem' }}>
+                <div
+                  style={{
+                    width: 48,
+                    height: 48,
+                    borderRadius: '12px',
+                    backgroundColor: '#09090b',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                  }}
+                >
+                  <GraduationCap size={26} color="#ffffff" />
+                </div>
                 <div>
-                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#00f5d4', fontWeight: 600 }}>
+                  <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#52525b', fontWeight: 700, letterSpacing: '0.5px' }}>
                     FORMACIÓN PROFESIONAL
                   </div>
-                  <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.25rem', margin: 0 }}>
+                  <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#09090b', fontSize: '1.35rem', fontWeight: 800, margin: 0 }}>
                     UCA Buenos Aires
                   </h3>
                 </div>
@@ -153,39 +188,52 @@ export const AboutSection: React.FC = () => {
 
               {/* Data Items */}
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
+                <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '1rem' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#71717a', fontWeight: 600 }}>
                     UNIVERSIDAD
                   </span>
-                  <div style={{ color: '#fff', fontWeight: 500, marginTop: '4px' }}>
+                  <div style={{ color: '#09090b', fontWeight: 700, fontSize: '1.05rem', marginTop: '4px' }}>
                     Universidad Católica Argentina (UCA)
                   </div>
-                  <span style={{ fontSize: '0.82rem', color: '#8e8e93' }}>Buenos Aires, Argentina</span>
+                  <span style={{ fontSize: '0.85rem', color: '#52525b' }}>Buenos Aires, Argentina</span>
                 </div>
 
-                <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '1rem' }}>
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
+                <div style={{ borderBottom: '1px solid rgba(0,0,0,0.08)', paddingBottom: '1rem' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#71717a', fontWeight: 600 }}>
                     ESPECIALIDADES
                   </span>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '8px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#e0e0e6' }}>
-                      <CheckCircle2 size={14} color="#00f5d4" />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginTop: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#18181b', fontWeight: 600 }}>
+                      <CheckCircle2 size={16} color="#000000" />
                       <span>Gestión de Negocios Digitales</span>
                     </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.88rem', color: '#e0e0e6' }}>
-                      <CheckCircle2 size={14} color="#00f5d4" />
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '0.9rem', color: '#18181b', fontWeight: 600 }}>
+                      <CheckCircle2 size={16} color="#000000" />
                       <span>Desarrollo de Software Web</span>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#8e8e93' }}>
+                  <span style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.75rem', color: '#71717a', fontWeight: 600 }}>
                     TECNOLOGÍAS QUE UTILIZO
                   </span>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginTop: '10px' }}>
                     {['React', 'TypeScript', 'Node.js', 'Next.js', 'Bases de datos', 'Tiendas Online', 'E-commerce', 'Diseño Web'].map((tech) => (
-                      <span key={tech} className="tag-badge">
+                      <span
+                        key={tech}
+                        style={{
+                          fontFamily: 'DM Sans, sans-serif',
+                          fontSize: '0.78rem',
+                          fontWeight: 600,
+                          padding: '5px 12px',
+                          borderRadius: '100px',
+                          background: '#09090b',
+                          color: '#ffffff',
+                          transition: 'all 0.2s ease',
+                          cursor: 'default',
+                        }}
+                      >
                         {tech}
                       </span>
                     ))}

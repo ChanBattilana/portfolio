@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Copy, Check, Send, ArrowUpRight, MessageSquare, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
-const LinkedinIcon = ({ size = 20, color = '#00f2fe' }: { size?: number; color?: string }) => (
+const LinkedinIcon = ({ size = 20, color = '#ffffff' }: { size?: number; color?: string }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
     <rect x="2" y="9" width="4" height="12"></rect>
@@ -23,7 +23,7 @@ export const ContactSection: React.FC = () => {
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(email);
     setCopiedEmail(true);
-    confetti({ particleCount: 40, spread: 60, origin: { y: 0.8 } });
+    confetti({ particleCount: 45, spread: 60, origin: { y: 0.8 }, colors: ['#ffffff', '#f4f4f5', '#a1a1aa', '#27272a'] });
     setTimeout(() => setCopiedEmail(false), 2500);
   };
 
@@ -32,7 +32,7 @@ export const ContactSection: React.FC = () => {
     if (!formData.name || !formData.email) return;
 
     setFormSent(true);
-    confetti({ particleCount: 70, spread: 80, origin: { y: 0.7 } });
+    confetti({ particleCount: 75, spread: 80, origin: { y: 0.7 }, colors: ['#ffffff', '#f4f4f5', '#a1a1aa', '#27272a'] });
     setTimeout(() => {
       setFormSent(false);
       setFormData({ name: '', email: '', message: '' });
@@ -47,14 +47,14 @@ export const ContactSection: React.FC = () => {
         padding: '5rem 0',
         position: 'relative',
         zIndex: 10,
-        borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+        borderTop: '1px solid rgba(255, 255, 255, 0.08)',
       }}
     >
       <div className="container-12col">
         {/* Section Header */}
         <div style={{ marginBottom: '3rem' }}>
           <div className="mono-label" style={{ marginBottom: '0.75rem' }}>
-            <span style={{ color: '#00f5d4' }}>●</span> CONTACTO
+            <span style={{ color: '#ffffff' }}>●</span> CONTACTO
           </div>
           <h2
             style={{
@@ -68,7 +68,7 @@ export const ContactSection: React.FC = () => {
           >
             Iniciemos una conversación
           </h2>
-          <p style={{ color: '#a0a0ab', fontSize: '1rem', marginTop: '0.75rem', maxWidth: '600px' }}>
+          <p style={{ color: '#a1a1aa', fontSize: '1rem', marginTop: '0.75rem', maxWidth: '600px' }}>
             ¿Tienes una idea, consulta o proyecto en mente? Escríbeme directamente por cualquier medio.
           </p>
         </div>
@@ -103,18 +103,18 @@ export const ContactSection: React.FC = () => {
                       width: 44,
                       height: 44,
                       borderRadius: 12,
-                      background: 'rgba(0, 245, 212, 0.08)',
-                      border: '1px solid rgba(0, 245, 212, 0.25)',
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <Mail size={20} color="#00f5d4" />
+                    <Mail size={20} color="#ffffff" />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#a1a1aa', letterSpacing: '0.5px' }}>
                       EMAIL DIRECTO
                     </div>
                     <a
@@ -136,21 +136,22 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   onClick={handleCopyEmail}
-                  data-cursor="COPIAR EMAIL"
                   style={{
-                    background: copiedEmail ? 'rgba(0, 245, 212, 0.2)' : 'rgba(255, 255, 255, 0.05)',
-                    border: copiedEmail ? '1px solid #00f5d4' : '1px solid rgba(255, 255, 255, 0.1)',
-                    color: copiedEmail ? '#00f5d4' : '#ffffff',
-                    padding: '8px 14px',
-                    borderRadius: '8px',
+                    background: copiedEmail ? '#ffffff' : 'rgba(255, 255, 255, 0.08)',
+                    border: copiedEmail ? '1px solid #ffffff' : '1px solid rgba(255, 255, 255, 0.2)',
+                    color: copiedEmail ? '#000000' : '#ffffff',
+                    padding: '8px 16px',
+                    borderRadius: '100px',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px',
                     fontFamily: 'DM Sans, sans-serif',
-                    fontSize: '0.75rem',
+                    fontSize: '0.78rem',
+                    fontWeight: 700,
                     transition: 'all 0.2s ease',
                     flexShrink: 0,
+                    boxShadow: copiedEmail ? '0 0 20px rgba(255,255,255,0.4)' : 'none',
                   }}
                 >
                   {copiedEmail ? <Check size={14} /> : <Copy size={14} />}
@@ -164,7 +165,6 @@ export const ContactSection: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="glass-card contact-item-card"
-                data-cursor="LINKEDIN"
                 style={{
                   padding: '1.5rem 1.75rem',
                   display: 'flex',
@@ -180,18 +180,18 @@ export const ContactSection: React.FC = () => {
                       width: 44,
                       height: 44,
                       borderRadius: 12,
-                      background: 'rgba(0, 242, 254, 0.08)',
-                      border: '1px solid rgba(0, 242, 254, 0.25)',
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <LinkedinIcon size={20} color="#00f2fe" />
+                    <LinkedinIcon size={20} color="#ffffff" />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#a1a1aa', letterSpacing: '0.5px' }}>
                       PERFIL PROFESIONAL
                     </div>
                     <div
@@ -213,12 +213,14 @@ export const ContactSection: React.FC = () => {
                     width: 36,
                     height: 36,
                     borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.05)',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fff',
+                    color: '#ffffff',
                     flexShrink: 0,
+                    transition: 'all 0.2s ease',
                   }}
                 >
                   <ArrowUpRight size={18} />
@@ -231,7 +233,6 @@ export const ContactSection: React.FC = () => {
                 target="_blank"
                 rel="noreferrer"
                 className="glass-card contact-item-card"
-                data-cursor="WHATSAPP"
                 style={{
                   padding: '1.5rem 1.75rem',
                   display: 'flex',
@@ -247,18 +248,18 @@ export const ContactSection: React.FC = () => {
                       width: 44,
                       height: 44,
                       borderRadius: 12,
-                      background: 'rgba(14, 239, 183, 0.08)',
-                      border: '1px solid rgba(14, 239, 183, 0.25)',
+                      background: 'rgba(255, 255, 255, 0.08)',
+                      border: '1px solid rgba(255, 255, 255, 0.2)',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
                       flexShrink: 0,
                     }}
                   >
-                    <MessageSquare size={20} color="#0eefb7" />
+                    <MessageSquare size={20} color="#ffffff" />
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#8e8e93' }}>
+                    <div style={{ fontFamily: 'DM Sans, sans-serif', fontSize: '0.72rem', color: '#a1a1aa', letterSpacing: '0.5px' }}>
                       WHATSAPP DIRECTO
                     </div>
                     <div
@@ -279,12 +280,14 @@ export const ContactSection: React.FC = () => {
                     width: 36,
                     height: 36,
                     borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.05)',
+                    background: 'rgba(255,255,255,0.06)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#fff',
+                    color: '#ffffff',
                     flexShrink: 0,
+                    transition: 'all 0.2s ease',
                   }}
                 >
                   <ArrowUpRight size={18} />
@@ -303,11 +306,12 @@ export const ContactSection: React.FC = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '1.25rem',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '0.5rem' }}>
-                <Sparkles size={18} color="#00f5d4" />
-                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#fff', fontSize: '1.2rem', margin: 0 }}>
+                <Sparkles size={18} color="#ffffff" />
+                <h3 style={{ fontFamily: 'Plus Jakarta Sans, sans-serif', color: '#ffffff', fontSize: '1.2rem', margin: 0, fontWeight: 700 }}>
                   Enviar mensaje directo
                 </h3>
               </div>
@@ -317,16 +321,17 @@ export const ContactSection: React.FC = () => {
                   style={{
                     padding: '2rem',
                     textAlign: 'center',
-                    background: 'rgba(0, 245, 212, 0.1)',
-                    border: '1px solid #00f5d4',
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid #ffffff',
                     borderRadius: '12px',
-                    color: '#00f5d4',
+                    color: '#ffffff',
                     fontFamily: 'DM Sans, sans-serif',
+                    boxShadow: '0 0 30px rgba(255,255,255,0.2)',
                   }}
                 >
                   <Check size={32} style={{ marginBottom: '8px' }} />
-                  <div>¡MENSAJE ENVIADO CON ÉXITO!</div>
-                  <div style={{ fontSize: '0.78rem', color: '#8e8e93', marginTop: '6px' }}>
+                  <div style={{ fontWeight: 700 }}>¡MENSAJE ENVIADO CON ÉXITO!</div>
+                  <div style={{ fontSize: '0.78rem', color: '#a1a1aa', marginTop: '6px' }}>
                     Te responderé a la brevedad.
                   </div>
                 </div>
@@ -338,8 +343,9 @@ export const ContactSection: React.FC = () => {
                         display: 'block',
                         fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
-                        color: '#8e8e93',
+                        color: '#a1a1aa',
                         marginBottom: '6px',
+                        fontWeight: 600,
                       }}
                     >
                       NOMBRE / EMPRESA
@@ -353,10 +359,10 @@ export const ContactSection: React.FC = () => {
                       style={{
                         width: '100%',
                         padding: '12px 16px',
-                        background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        background: '#09090b',
+                        border: '1px solid rgba(255, 255, 255, 0.18)',
                         borderRadius: '8px',
-                        color: '#fff',
+                        color: '#ffffff',
                         fontFamily: 'Inter, sans-serif',
                         fontSize: '0.95rem',
                         outline: 'none',
@@ -370,8 +376,9 @@ export const ContactSection: React.FC = () => {
                         display: 'block',
                         fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
-                        color: '#8e8e93',
+                        color: '#a1a1aa',
                         marginBottom: '6px',
+                        fontWeight: 600,
                       }}
                     >
                       EMAIL DE CONTACTO
@@ -385,10 +392,10 @@ export const ContactSection: React.FC = () => {
                       style={{
                         width: '100%',
                         padding: '12px 16px',
-                        background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        background: '#09090b',
+                        border: '1px solid rgba(255, 255, 255, 0.18)',
                         borderRadius: '8px',
-                        color: '#fff',
+                        color: '#ffffff',
                         fontFamily: 'Inter, sans-serif',
                         fontSize: '0.95rem',
                         outline: 'none',
@@ -402,8 +409,9 @@ export const ContactSection: React.FC = () => {
                         display: 'block',
                         fontFamily: 'DM Sans, sans-serif',
                         fontSize: '0.75rem',
-                        color: '#8e8e93',
+                        color: '#a1a1aa',
                         marginBottom: '6px',
+                        fontWeight: 600,
                       }}
                     >
                       MENSAJE
@@ -417,10 +425,10 @@ export const ContactSection: React.FC = () => {
                       style={{
                         width: '100%',
                         padding: '12px 16px',
-                        background: 'rgba(255, 255, 255, 0.04)',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        background: '#09090b',
+                        border: '1px solid rgba(255, 255, 255, 0.18)',
                         borderRadius: '8px',
-                        color: '#fff',
+                        color: '#ffffff',
                         fontFamily: 'Inter, sans-serif',
                         fontSize: '0.95rem',
                         outline: 'none',
@@ -429,7 +437,7 @@ export const ContactSection: React.FC = () => {
                     />
                   </div>
 
-                  <button type="submit" className="btn-cyan" style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center' }}>
+                  <button type="submit" className="btn-primary" style={{ marginTop: '0.5rem', width: '100%', justifyContent: 'center' }}>
                     <span>Enviar mensaje</span>
                     <Send size={16} />
                   </button>

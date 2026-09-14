@@ -39,7 +39,7 @@ export const Footer: React.FC = () => {
           style={{
             fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.8rem',
-            color: '#00f5d4',
+            color: '#ffffff',
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
@@ -47,16 +47,15 @@ export const Footer: React.FC = () => {
           className="hide-mobile"
         >
           <span className="status-dot" />
-          <span>SANTOS BATTILANA</span>
+          <span style={{ fontWeight: 600 }}>SANTOS BATTILANA</span>
         </div>
 
         {/* Back to Top Button */}
         <button
           onClick={scrollToTop}
-          data-cursor="INICIO"
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
+            background: 'rgba(255, 255, 255, 0.06)',
+            border: '1px solid rgba(255, 255, 255, 0.15)',
             color: '#ffffff',
             padding: '8px 18px',
             borderRadius: '100px',
@@ -66,15 +65,18 @@ export const Footer: React.FC = () => {
             gap: '6px',
             fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.8rem',
+            fontWeight: 600,
             transition: 'all 0.2s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = '#00f5d4';
-            e.currentTarget.style.color = '#050505';
+            e.currentTarget.style.backgroundColor = '#ffffff';
+            e.currentTarget.style.color = '#000000';
+            e.currentTarget.style.boxShadow = '0 0 20px rgba(255,255,255,0.4)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)';
             e.currentTarget.style.color = '#ffffff';
+            e.currentTarget.style.boxShadow = 'none';
           }}
         >
           <span>Volver arriba</span>

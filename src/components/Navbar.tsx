@@ -53,10 +53,10 @@ export const Navbar: React.FC = () => {
         top: 0,
         zIndex: 80,
         width: '100%',
-        backgroundColor: scrolled || mobileMenuOpen ? 'rgba(10, 10, 10, 0.95)' : 'rgba(10, 10, 10, 0.4)',
+        backgroundColor: scrolled || mobileMenuOpen ? 'rgba(0, 0, 0, 0.95)' : 'rgba(0, 0, 0, 0.5)',
         backdropFilter: 'blur(16px)',
         WebkitBackdropFilter: 'blur(16px)',
-        borderBottom: scrolled || mobileMenuOpen ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
+        borderBottom: scrolled || mobileMenuOpen ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid transparent',
         transition: 'all 0.3s ease',
         padding: '1rem 0',
       }}
@@ -70,22 +70,22 @@ export const Navbar: React.FC = () => {
             setMobileMenuOpen(false);
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          data-cursor="INICIO"
           style={{
             display: 'flex',
             alignItems: 'center',
             gap: '10px',
             textDecoration: 'none',
-            color: '#f5f5f7',
+            color: '#ffffff',
           }}
         >
           <span className="status-dot" />
           <span
             style={{
               fontFamily: 'DM Sans, sans-serif',
-              fontWeight: 700,
-              fontSize: '0.9rem',
+              fontWeight: 800,
+              fontSize: '0.92rem',
               letterSpacing: '0.5px',
+              color: '#ffffff',
             }}
           >
             SANTOS BATTILANA
@@ -94,8 +94,8 @@ export const Navbar: React.FC = () => {
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.78rem',
-              color: '#8e8e93',
-              borderLeft: '1px solid rgba(255, 255, 255, 0.15)',
+              color: '#a1a1aa',
+              borderLeft: '1px solid rgba(255, 255, 255, 0.2)',
               paddingLeft: '10px',
             }}
             className="hide-mobile"
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
           style={{
             fontFamily: 'DM Sans, sans-serif',
             fontSize: '0.8rem',
-            color: '#8e8e93',
+            color: '#a1a1aa',
             display: 'flex',
             alignItems: 'center',
             gap: '12px',
@@ -117,74 +117,71 @@ export const Navbar: React.FC = () => {
           className="hide-mobile"
         >
           <span>BUENOS AIRES</span>
-          <span style={{ color: 'rgba(255,255,255,0.2)' }}>•</span>
-          <span style={{ color: '#00f5d4', fontWeight: 600 }}>{timeStr} hs</span>
+          <span style={{ color: 'rgba(255,255,255,0.25)' }}>•</span>
+          <span style={{ color: '#ffffff', fontWeight: 700 }}>{timeStr} hs</span>
         </div>
 
         {/* Desktop Navigation Links */}
         <nav className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <button
             onClick={() => scrollTo('proyectos')}
-            data-cursor="PROYECTOS"
             style={{
               background: 'none',
               border: 'none',
-              color: '#f5f5f7',
+              color: '#e4e4e7',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.9rem',
-              fontWeight: 500,
+              fontWeight: 600,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '4px',
               transition: 'color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#00f5d4')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#f5f5f7')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#e4e4e7')}
           >
             Proyectos
           </button>
 
           <button
             onClick={() => scrollTo('sobre-mi')}
-            data-cursor="SOBRE MÍ"
             style={{
               background: 'none',
               border: 'none',
-              color: '#f5f5f7',
+              color: '#e4e4e7',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.9rem',
-              fontWeight: 500,
+              fontWeight: 600,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '4px',
               transition: 'color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#00f5d4')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#f5f5f7')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#e4e4e7')}
           >
             Sobre mí
           </button>
 
           <button
             onClick={() => scrollTo('contacto')}
-            data-cursor="CONTACTO"
             style={{
               background: 'none',
               border: 'none',
-              color: '#f5f5f7',
+              color: '#e4e4e7',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.9rem',
-              fontWeight: 500,
+              fontWeight: 600,
               cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '4px',
               transition: 'color 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = '#00f5d4')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = '#f5f5f7')}
+            onMouseEnter={(e) => (e.currentTarget.style.color = '#ffffff')}
+            onMouseLeave={(e) => (e.currentTarget.style.color = '#e4e4e7')}
           >
             Contacto
           </button>
@@ -196,9 +193,9 @@ export const Navbar: React.FC = () => {
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Abrir menú de navegación"
           style={{
-            background: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.12)',
-            color: '#00f5d4',
+            background: 'rgba(255, 255, 255, 0.08)',
+            border: '1px solid rgba(255, 255, 255, 0.18)',
+            color: '#ffffff',
             padding: '8px',
             borderRadius: '8px',
             cursor: 'pointer',
@@ -218,16 +215,16 @@ export const Navbar: React.FC = () => {
             display: 'flex',
             flexDirection: 'column',
             gap: '1.25rem',
-            borderTop: '1px solid rgba(255, 255, 255, 0.08)',
-            backgroundColor: 'rgba(10, 10, 10, 0.98)',
+            borderTop: '1px solid rgba(255, 255, 255, 0.12)',
+            backgroundColor: 'rgba(0, 0, 0, 0.98)',
           }}
         >
           <button
             onClick={() => scrollTo('proyectos')}
             style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-              color: '#f5f5f7',
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              color: '#ffffff',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '1rem',
               fontWeight: 600,
@@ -242,9 +239,9 @@ export const Navbar: React.FC = () => {
           <button
             onClick={() => scrollTo('sobre-mi')}
             style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-              color: '#f5f5f7',
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              color: '#ffffff',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '1rem',
               fontWeight: 600,
@@ -259,9 +256,9 @@ export const Navbar: React.FC = () => {
           <button
             onClick={() => scrollTo('contacto')}
             style={{
-              background: 'rgba(255, 255, 255, 0.03)',
-              border: '1px solid rgba(255, 255, 255, 0.06)',
-              color: '#f5f5f7',
+              background: 'rgba(255, 255, 255, 0.06)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              color: '#ffffff',
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '1rem',
               fontWeight: 600,
@@ -278,16 +275,16 @@ export const Navbar: React.FC = () => {
             style={{
               fontFamily: 'DM Sans, sans-serif',
               fontSize: '0.8rem',
-              color: '#8e8e93',
+              color: '#a1a1aa',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
               paddingTop: '0.75rem',
-              borderTop: '1px dashed rgba(255, 255, 255, 0.1)',
+              borderTop: '1px dashed rgba(255, 255, 255, 0.15)',
             }}
           >
             <span>BUENOS AIRES, ARG</span>
-            <span style={{ color: '#00f5d4', fontWeight: 600 }}>{timeStr} hs</span>
+            <span style={{ color: '#ffffff', fontWeight: 700 }}>{timeStr} hs</span>
           </div>
         </div>
       )}

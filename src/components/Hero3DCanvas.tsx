@@ -32,26 +32,26 @@ export const Hero3DCanvas: React.FC = () => {
     const geometry = new THREE.IcosahedronGeometry(2.1, 40);
     const originalPositions = geometry.attributes.position.clone();
 
-    // Material: High-end physical translucent dark metallic mesh
+    // Material: Liquid Chrome / Titanium Mercury Physical Mesh
     const material = new THREE.MeshPhysicalMaterial({
-      color: new THREE.Color('#0c131a'),
-      emissive: new THREE.Color('#020f18'),
-      roughness: 0.25,
-      metalness: 0.8,
+      color: new THREE.Color('#141416'),
+      emissive: new THREE.Color('#0a0a0c'),
+      roughness: 0.12,
+      metalness: 0.95,
       clearcoat: 1.0,
-      clearcoatRoughness: 0.1,
+      clearcoatRoughness: 0.06,
       wireframe: false,
       flatShading: false,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.9,
     });
 
-    // Wireframe overlay mesh for futuristic editorial tech vibe
+    // Wireframe overlay mesh for clean monochrome tech look
     const wireframeMaterial = new THREE.MeshBasicMaterial({
-      color: new THREE.Color('#00f5d4'),
+      color: new THREE.Color('#ffffff'),
       wireframe: true,
       transparent: true,
-      opacity: 0.08,
+      opacity: 0.1,
     });
 
     const mesh = new THREE.Mesh(geometry, material);
@@ -60,20 +60,20 @@ export const Hero3DCanvas: React.FC = () => {
     mesh.add(wireMesh);
     scene.add(mesh);
 
-    // Surgical Cyan & Aquamarine Lighting
-    const cyanLight = new THREE.PointLight('#00f5d4', 25, 20);
-    cyanLight.position.set(4, 3, 4);
-    scene.add(cyanLight);
+    // High-Key Crisp White Studio Lighting
+    const whiteKeyLight = new THREE.PointLight('#ffffff', 32, 25);
+    whiteKeyLight.position.set(4, 3, 4);
+    scene.add(whiteKeyLight);
 
-    const tealLight = new THREE.PointLight('#00f2fe', 20, 20);
-    tealLight.position.set(-4, -3, 2);
-    scene.add(tealLight);
+    const silverFillLight = new THREE.PointLight('#f4f4f5', 24, 20);
+    silverFillLight.position.set(-4, -3, 2);
+    scene.add(silverFillLight);
 
-    const topRimLight = new THREE.PointLight('#ffffff', 10, 15);
+    const topRimLight = new THREE.PointLight('#ffffff', 30, 20);
     topRimLight.position.set(0, 5, -2);
     scene.add(topRimLight);
 
-    const ambientLight = new THREE.AmbientLight('#080d14', 2);
+    const ambientLight = new THREE.AmbientLight('#ffffff', 1.0);
     scene.add(ambientLight);
 
     // Mouse parallax tracking
