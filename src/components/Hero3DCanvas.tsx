@@ -8,23 +8,32 @@ export const Hero3DCanvas: React.FC = () => {
     const container = mountRef.current;
     if (!container) return;
 
+    const width = container.clientWidth || window.innerWidth;
+    const height = container.clientHeight || 500;
+
     // Scene setup
     const scene = new THREE.Scene();
 
-    // Camera
+    // Camera with aspect ratio protection
     const camera = new THREE.PerspectiveCamera(
       45,
-      container.clientWidth / container.clientHeight,
+      height > 0 ? width / height : 1,
       0.1,
       1000
     );
     camera.position.z = 7;
 
-    // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
+    // Renderer with try-catch to prevent crashing in Safari / environments without WebGL
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'default' });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer.setSize(width, height);
+      container.appendChild(renderer.domElement);
+    } catch (e) {
+      console.warn('WebGL is not available or blocked by browser:', e);
+      return;
+    }
 
     // Group for the entire interactive 3D object
     const mainGroup = new THREE.Group();
@@ -203,12 +212,16 @@ export const Hero3DCanvas: React.FC = () => {
 
     const animId = requestAnimationFrame(animate);
 
-    // Resize handler
+    // Resize handler with zero-division safeguard
     const handleResize = () => {
       if (!container) return;
-      camera.aspect = container.clientWidth / container.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(container.clientWidth, container.clientHeight);
+      const w = container.clientWidth || window.innerWidth;
+      const h = container.clientHeight || 500;
+      if (h > 0) {
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+      }
     };
 
     window.addEventListener('resize', handleResize);

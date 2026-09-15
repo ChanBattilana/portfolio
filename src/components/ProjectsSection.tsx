@@ -37,7 +37,7 @@ export const ProjectsSection: React.FC = () => {
         { label: 'COTIZACIÓN', value: 'B2B Inmediata' },
       ],
       accentColor: '#ffffff',
-      previewImage: '/previews/dedicar.png',
+      previewImage: './previews/dedicar.png',
     },
     {
       id: 'champagnat',
@@ -56,7 +56,7 @@ export const ProjectsSection: React.FC = () => {
         { label: 'DISPONIBILIDAD', value: '99.9% Online' },
       ],
       accentColor: '#ffffff',
-      previewImage: '/previews/champa.png',
+      previewImage: './previews/champa.png',
     },
   ];
 

@@ -6,10 +6,11 @@ import { ProjectsSection } from './components/ProjectsSection';
 import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
+import { ErrorBoundary } from './components/ErrorBoundary';
 
 export function App() {
   return (
-    <>
+    <ErrorBoundary>
       {/* Atmospheric Vignette Backdrop */}
       <div className="vignette-overlay" />
 
@@ -26,7 +27,7 @@ export function App() {
           <Footer />
         </div>
       </BrowserMockupFrame>
-    </>
+    </ErrorBoundary>
   );
 }
 
