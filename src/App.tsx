@@ -7,10 +7,14 @@ import { AboutSection } from './components/AboutSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { StarsBackground } from './components/StarsBackground';
 
 export function App() {
   return (
     <ErrorBoundary>
+      {/* Full-Page Twinkling Stars Cosmic Background */}
+      <StarsBackground />
+
       {/* Atmospheric Vignette Backdrop */}
       <div className="vignette-overlay" />
 

@@ -10,7 +10,7 @@ export const BrowserMockupFrame: React.FC<BrowserMockupFrameProps> = ({ children
       style={{
         minHeight: '100vh',
         width: '100%',
-        backgroundColor: '#000000',
+        backgroundColor: 'transparent',
         position: 'relative',
       }}
     >
