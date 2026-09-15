@@ -8,10 +8,14 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { StarsBackground } from './components/StarsBackground';
+import { ExitIntentModal } from './components/ExitIntentModal';
 
 export function App() {
   return (
     <ErrorBoundary>
+      {/* Exit Intent Contact Lead Modal */}
+      <ExitIntentModal />
+
       {/* Full-Page Twinkling Stars Cosmic Background */}
       <StarsBackground />
 
