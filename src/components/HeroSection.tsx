@@ -21,7 +21,7 @@ export const HeroSection: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Radiant White Ambient Glow Backdrop */}
+      {/* Radiant White Ambient Glow Backdrop (smooth multi-stop gradient without costly blur filter) */}
       <div
         style={{
           position: 'absolute',
@@ -29,9 +29,9 @@ export const HeroSection: React.FC = () => {
           left: '-2%',
           width: '650px',
           height: '650px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.06) 45%, transparent 75%)',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 25%, rgba(255, 255, 255, 0.02) 50%, transparent 70%)',
           pointerEvents: 'none',
-          filter: 'blur(70px)',
+          transform: 'translateZ(0)',
           zIndex: 1,
         }}
       />

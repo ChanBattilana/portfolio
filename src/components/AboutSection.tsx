@@ -14,7 +14,7 @@ export const AboutSection: React.FC = () => {
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
       }}
     >
-      {/* Subtle White Ambient Spotlight */}
+      {/* Subtle White Ambient Spotlight (optimized smooth gradient without blur filter) */}
       <div
         style={{
           position: 'absolute',
@@ -22,9 +22,9 @@ export const AboutSection: React.FC = () => {
           right: '0%',
           width: '550px',
           height: '550px',
-          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%)',
+          background: 'radial-gradient(circle, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.04) 30%, transparent 65%)',
           pointerEvents: 'none',
-          filter: 'blur(60px)',
+          transform: 'translateZ(0)',
           zIndex: 0,
         }}
       />

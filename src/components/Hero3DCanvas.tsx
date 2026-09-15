@@ -26,8 +26,13 @@ export const Hero3DCanvas: React.FC = () => {
     // Renderer with try-catch to prevent crashing in Safari / environments without WebGL
     let renderer: THREE.WebGLRenderer;
     try {
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'default' });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+        powerPreference: 'high-performance',
+      });
+      // Cap pixel ratio to 1.5 for ultra-smooth 60/120 FPS on Mac Retina / 4K
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
       renderer.setSize(width, height);
       container.appendChild(renderer.domElement);
     } catch (e) {
@@ -61,7 +66,7 @@ export const Hero3DCanvas: React.FC = () => {
     const vertexPoints = new THREE.Points(vertexPointsGeo, vertexPointsMat);
     mainGroup.add(vertexPoints);
 
-    // 2. Multi-Axis Orbital Gyroscope Rings
+    // 2. Multi-Axis Orbital Gyroscope Rings (Optimized segments for Mac GPU)
     const ringMaterials = [
       new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.55 }),
       new THREE.LineBasicMaterial({ color: 0xe4e4e7, transparent: true, opacity: 0.4 }),
@@ -69,11 +74,11 @@ export const Hero3DCanvas: React.FC = () => {
     ];
 
     const rings: THREE.LineLoop[] = [];
+    const segments = 48; // Crisp circular shape with half the GPU draw calls
 
     // Outer Ring 1
     const ring1Geo = new THREE.BufferGeometry();
     const ring1Pts: THREE.Vector3[] = [];
-    const segments = 96;
     for (let i = 0; i <= segments; i++) {
       const theta = (i / segments) * Math.PI * 2;
       ring1Pts.push(new THREE.Vector3(Math.cos(theta) * 2.3, Math.sin(theta) * 2.3, 0));
@@ -111,15 +116,15 @@ export const Hero3DCanvas: React.FC = () => {
     rings.push(ring3);
 
     // Satellite beads traveling on rings
-    const beadGeometry = new THREE.SphereGeometry(0.06, 12, 12);
+    const beadGeometry = new THREE.SphereGeometry(0.06, 8, 8);
     const beadMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
     const bead1 = new THREE.Mesh(beadGeometry, beadMaterial);
     const bead2 = new THREE.Mesh(beadGeometry, beadMaterial);
     ring1.add(bead1);
     ring2.add(bead2);
 
-    // 3. Floating Particle Constellation
-    const particleCount = 420;
+    // 3. Floating Particle Constellation (Optimized to 160 stars)
+    const particleCount = 160;
     const particlePositions = new Float32Array(particleCount * 3);
     const particleScales = new Float32Array(particleCount);
 
@@ -207,10 +212,31 @@ export const Hero3DCanvas: React.FC = () => {
       particleSystem.rotation.z = Math.sin(elapsedTime * 0.2) * 0.08;
 
       renderer.render(scene, camera);
-      requestAnimationFrame(animate);
+      if (isVisible) {
+        animId = requestAnimationFrame(animate);
+      }
     };
 
-    const animId = requestAnimationFrame(animate);
+    let isVisible = true;
+    let animId = requestAnimationFrame(animate);
+
+    // IntersectionObserver to pause Three.js rendering completely when user scrolls away
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (!isVisible) {
+            isVisible = true;
+            animId = requestAnimationFrame(animate);
+          }
+        } else {
+          isVisible = false;
+          cancelAnimationFrame(animId);
+        }
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(container);
 
     // Resize handler with zero-division safeguard
     const handleResize = () => {
@@ -227,6 +253,7 @@ export const Hero3DCanvas: React.FC = () => {
     window.addEventListener('resize', handleResize);
 
     return () => {
+      observer.disconnect();
       cancelAnimationFrame(animId);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
@@ -258,6 +285,8 @@ export const Hero3DCanvas: React.FC = () => {
           pointerEvents: 'none',
           zIndex: 2,
           opacity: 0.95,
+          transform: 'translateZ(0)',
+          willChange: 'transform',
         }}
       />
       <style>{`
